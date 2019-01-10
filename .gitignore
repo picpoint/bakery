@@ -1,4 +1,4 @@
-#ignore directory "node_module"
+#ignore directory "node_moduleS"
 node_modules
 
 #ignore directory to storm
