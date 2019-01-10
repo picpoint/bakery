@@ -7,7 +7,7 @@ var browserSync = require('browser-sync').create();
 
 
 
-var smartGridConf = {
+const smartGridConf = {
 	outputStyle: 'less',
 	colums: 12,
 	offset: '30px',   // межклоночник
@@ -16,6 +16,7 @@ var smartGridConf = {
 		maxWidth: '1280px',
 		fields: '30px'   // отступ от края экрана
 	},
+
 	breakPoints: {
 		xl: {
 			width: '1140px',
@@ -41,26 +42,50 @@ var smartGridConf = {
 };
 
 
+gulp.task('test', function () {
+	console.log('TASK IS RUN!!!');
+});
+
+
+
 gulp.task('preproc', function () {
-	return gulp.src('./src/less/*.less')
+	return gulp.src('./src/less/style.less')
 		.pipe(less())
 		.pipe(gulp.dest('./dist/css/'))
+		.pipe(cleanCSS())
+		.pipe(gulp.dest('./dist/css'))
+		.pipe(browserSync.reload({
+			stream: true
+		}));
 });
+
 
 gulp.task('htmlmin', function () {
 	return gulp.src('./src/*.html')
 		.pipe(htmlmin({collapseWhitespace: true}))
-		.pipe(gulp.dest('./dist'));
+		.pipe(gulp.dest('./dist'))
+		.pipe(browserSync.reload({
+			stream: true
+		}));
 });
+
+
+
+gulp.task('watch', ['preproc', 'htmlmin', 'browserSync'], function () {
+	gulp.watch('./src/less/style.less', ['preproc']);
+	gulp.watch('./src/*.html', ['htmlmin']);
+});
+
 
 gulp.task('grid', function () {
 	smartgrid('./src/less', smartGridConf);
 });
 
-gulp.task('browser-sync', function() {
+
+gulp.task('browserSync', function() {
 	browserSync.init({
 		server: {
-			baseDir: "./"
+			baseDir: './dist'
 		}
 	});
 });
