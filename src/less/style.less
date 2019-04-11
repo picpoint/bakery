@@ -17,13 +17,114 @@
 
 .pastry {
 	&__wrap {
-		height: 67rem;
-		border: @border;
+		//height: 67rem;
+		//border: @border;
 		background: url("../pict/img_bg.png");
 		background-size: cover;
 	}
 	&__headerMenu {
+		border: @border;
+		display: flex;
+		justify-content: center;
 		height: 80px;
 		background-color: rgba(0, 0, 0, 0.3);
 	}
+	&__block {
+		//border: @border;
+		width: 83%;
+		display: flex;
+	}
+	&__logo {
+		//border: @border;
+		width: 15%;
+		img {
+			//border: @border;
+			height: 100%;
+			width: 90%;
+		}
+	}
+	&__menu {
+		//border: @border;
+		display: flex;
+		justify-content: center;
+		width: 75%;
+		color: white;
+	}
+	&__menublock {
+		//border: @border;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 85%;
+		a {
+			text-decoration: none;
+			color: white;
+			font-size: 1.2rem;
+		}
+	}
+	&__socialnetwork {
+		//border: @border;
+		width: 10%;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		img {
+			width: 20px;
+		}
+	}
+	&__withlove {
+		border: @border;
+		height: 100vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		color: white;
+	}
+	&__textlove {
+		//border: @border;
+		align-self: center;
+		margin: 90px 0 20px 0;
+		span {
+			font-size: 9rem;
+		}
+	}
+	&__dashed {
+		//border: @border;
+		display: flex;
+		justify-content: center;
+		margin: 40px;
+		img {
+			border: @border;
+			width: 13%;
+			height: 100%;
+		}
+	}
+	&__text {
+		border: @border;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		margin: 40px;
+		span {
+			align-self: center;
+			font-size: 1.7rem;
+		}
+	}
+	&__btn {
+		border: @border;
+		display: flex;
+		justify-content: center;
+		margin: 40px;
+		button {
+			width: 220px;
+			height: 50px;
+			background-color: rgba(0, 0, 0, 0.3);
+			border: 1px dashed darkgray;
+			color: white;
+			font-size: 1rem;
+			cursor: pointer;
+		}
+	}
+
+
 }
