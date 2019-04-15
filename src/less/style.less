@@ -17,8 +17,6 @@
 
 .pastry {
 	&__wrap {
-		//height: 67rem;
-		//border: @border;
 		background: url("../pict/img_bg.png");
 		background-size: cover;
 	}
@@ -30,18 +28,29 @@
 		background-color: rgba(0, 0, 0, 0.3);
 	}
 	&__block {
-		//border: @border;
+		border: @border;
 		width: 83%;
 		display: flex;
 		font-family: 'Dancing Script', cursive;
+		.lg-block({
+			width: 95%;
+		});
 	}
 	&__logo {
 		//border: @border;
 		width: 15%;
 		img {
-			//border: @border;
+			border: @border;
 			height: 100%;
 			width: 90%;
+			transition: @transition;
+			.xl-block({
+				width: 100%;
+				transition: @transition;
+			});
+			.lg-block({
+				width: 100%;
+			});
 		}
 	}
 	&__menu {
@@ -61,10 +70,18 @@
 			text-decoration: none;
 			color: white;
 			font-size: 1.2rem;
+			transition: @transition;
+			.xl-block({
+				font-size: 1rem;
+				transition: @transition;
+			});
+			.lg-block({
+				padding: 15px;
+			});
 		}
 	}
 	&__socialnetwork {
-		//border: @border;
+		border: @border;
 		width: 10%;
 		display: flex;
 		justify-content: space-around;
