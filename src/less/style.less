@@ -26,21 +26,47 @@
 		justify-content: center;
 		height: 80px;
 		background-color: rgba(0, 0, 0, 0.3);
+		transition: @transition;
+		.md-block({
+			height: 200px;
+			margin-bottom: 100px;
+			transition: @transition;
+		});
+		.sm-block({
+			height: 450px;
+			margin-bottom: 100px;
+		});
+		.xs-block({
+			margin-bottom: 100px;
+		});
 	}
 	&__block {
-		border: @border;
+		//border: @border;
 		width: 83%;
 		display: flex;
 		font-family: 'Dancing Script', cursive;
+		transition: @transition;
 		.lg-block({
 			width: 95%;
+			transition: @transition;
+		});
+		.md-block({
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			transition: @transition;
 		});
 	}
 	&__logo {
 		//border: @border;
 		width: 15%;
+		.md-block({
+			width: 150px;
+			margin: 10px;
+		});
 		img {
-			border: @border;
+			//border: @border;
 			height: 100%;
 			width: 90%;
 			transition: @transition;
@@ -59,35 +85,82 @@
 		justify-content: center;
 		width: 75%;
 		color: white;
+		.md-block({
+			width: 100%;
+		});
 	}
 	&__menublock {
 		//border: @border;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		width: 85%;
+		width: 95%;
+		.md-block({
+			width: 100%;
+		margin: 10px;
+		});
+		.sm-block({
+			flex-direction: column;
+		});
 		a {
-			text-decoration: none;
+			//border: @border;
+			display: flex;
+			justify-content: center;
+			flex-grow: 1;
 			color: white;
 			font-size: 1.2rem;
+			text-decoration: none;
 			transition: @transition;
+			&:hover {
+				background: rgba(255, 255, 255, 0.7);
+				color: black;
+				padding: 10px;
+				border-radius: 10px;
+			}
 			.xl-block({
 				font-size: 1rem;
 				transition: @transition;
 			});
 			.lg-block({
-				padding: 15px;
+				padding: 5px;
 			});
+		}
+		span {
+			padding: 0 3px;
 		}
 	}
 	&__socialnetwork {
-		border: @border;
+		//border: @border;
 		width: 10%;
 		display: flex;
 		justify-content: space-around;
 		align-items: center;
+		.md-block({
+			margin: 10px;
+			height: 15%;
+			width: 150px;
+		});
+		.sm-block({
+			width: 200px;
+		});
 		img {
+			//border: @border;
 			width: 20px;
+			padding: 10px;
+			margin: 7px;
+			transition: @transition;
+			&:hover {
+				background: rgba(255, 255, 255, 0.3);
+				border-radius: 10px;
+				color: black;
+				transition: @transition;
+			}
+			.md-block({
+				width: 30px;
+			});
+			.sm-block({
+				width: 30px;
+			});
 		}
 	}
 	&__withlove {

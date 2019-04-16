@@ -1,16 +1,16 @@
-СЂР°Р±РѕС‚Р° СЃ smart-grid
-1) РЈСЃС‚Р°РЅР°РІР»РёРІР°РµРј smart-grid  npm i smart-grid -D
-2) РїРѕРґРєР»СЋС‡РёС‚СЊ РІ gulpfile var smartgrid = require('smart-grid');
-3) РїСЂРѕРїРёСЃС‹РІР°РµРј breakpoint-С‹ РІ gulpfile
+работа с smart-grid
+1) Устанавливаем smart-grid  npm i smart-grid -D
+2) подключить в gulpfile var smartgrid = require('smart-grid');
+3) прописываем breakpoint-ы в gulpfile
 
 const smartGrigConf = {
 		outputStyle: 'less',
 		colums: 12,
-		offset: '30px',   // РјРµР¶РєР»РѕРЅРѕС‡РЅРёРє
+		offset: '30px',   // межклоночник
 		mobileFirst: false,
 		container: {
 				maxWidth: '1280px',
-				fields: '30px'   // РѕС‚СЃС‚СѓРї РѕС‚ РєСЂР°СЏ СЌРєСЂР°РЅР°
+				fields: '30px'   // отступ от края экрана
 		},
 		breakPoints: {
 			xl: {
@@ -38,10 +38,10 @@ const smartGrigConf = {
 
 
 
-4) РїСЂРѕРїРёСЃС‹РІР°РµРј РІС‹Р·РѕРІ РІ gulpfile
+4) прописываем вызов в gulpfile
 
 gulp.task('grid', function () {
 		smartgrid(settings.root + '/less', smartGrigConf);
 });
 
-5) РІС‹Р·С‹РІР°РµРј gulp grid
+5) вызываем gulp grid
