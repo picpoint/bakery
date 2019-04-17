@@ -29,15 +29,13 @@
 		transition: @transition;
 		.md-block({
 			height: 200px;
-			margin-bottom: 100px;
 			transition: @transition;
 		});
 		.sm-block({
 			height: 450px;
-			margin-bottom: 100px;
 		});
 		.xs-block({
-			margin-bottom: 100px;
+			margin-bottom: 30px;
 		});
 	}
 	&__block {
@@ -97,7 +95,7 @@
 		width: 95%;
 		.md-block({
 			width: 100%;
-		margin: 10px;
+			margin: 10px;
 		});
 		.sm-block({
 			flex-direction: column;
@@ -131,7 +129,7 @@
 	}
 	&__socialnetwork {
 		//border: @border;
-		width: 10%;
+		width: 12%;
 		display: flex;
 		justify-content: space-around;
 		align-items: center;
@@ -173,13 +171,29 @@
 	}
 	&__textlove {
 		//border: @border;
+		display: flex;
+		justify-content: center;
 		align-self: center;
-		margin: 90px 0 20px 0;
+		width: 90%;
+		margin-bottom: 20px;
 		span {
+			//border: @border;
+			text-align: center;
 			font-family: 'Courgette', cursive;
 			font-style: italic;
-			font-size: 9rem;
+			font-size: 8.2rem;
 			text-shadow: 2px 2px 7px #000;
+			transition: @transition;
+			.xl-block({
+				font-size: 7.1rem;
+				transition: @transition;
+			});
+			.lg-block({
+				font-size: 6rem;
+			});
+			.sm-block({
+				font-size: 5rem;
+			});
 		}
 	}
 	&__dashed {
@@ -189,8 +203,19 @@
 		margin: 40px;
 		img {
 			//border: @border;
-			width: 13%;
+			width: 15%;
 			height: 100%;
+			transition: @transition;
+			.lg-block({
+				width: 25%;
+				transition: @transition;
+			});
+			.md-block({
+				width: 35%;
+			});
+			.xs-block({
+				width: 45%;
+			});
 		}
 	}
 	&__text {
@@ -200,11 +225,18 @@
 		justify-content: center;
 		margin: 40px;
 		span {
+			//border: @border;
 			align-self: center;
 			font-size: 1.7rem;
 			font-family: 'Mukta', sans-serif;
 			text-shadow: 2px 2px 7px #000;
 			letter-spacing: 3px;
+			text-align: center;
+			transition: @transition;
+			.lg-block({
+				font-size: 1.3rem;
+				transition: @transition;
+			});
 		}
 	}
 	&__btn {
@@ -221,6 +253,12 @@
 			font-size: 1rem;
 			cursor: pointer;
 			font-family: 'Mukta', sans-serif;
+			transition: @transition;
+			.sm-block({
+				width: 180px;
+				height: 40px;
+				transition: @transition;
+			});
 		}
 	}
 
