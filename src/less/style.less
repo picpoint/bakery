@@ -15,6 +15,7 @@
 	box-sizing: border-box;
 }
 
+// PASTRY START
 .pastry {
 	&__wrap {
 		background: url("../pict/img_bg.png");
@@ -254,6 +255,12 @@
 			cursor: pointer;
 			font-family: 'Mukta', sans-serif;
 			transition: @transition;
+			outline: 0;
+			&:hover {
+				box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+				transform: scale(1.1, 1.1);
+				outline: 0;
+			}
 			.sm-block({
 				width: 180px;
 				height: 40px;
@@ -261,6 +268,23 @@
 			});
 		}
 	}
-
-
 }
+
+// PASTRY STOP
+
+//  -----------
+
+// ART START
+.art {
+	&__wrap {
+		border: @border;
+	}
+	&__bread {
+
+	}
+	&__content {
+
+	}
+}
+// ART STOP
+
