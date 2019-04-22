@@ -15,6 +15,16 @@
 	box-sizing: border-box;
 }
 
+.mixinblocktastes {
+  border: @border;
+  margin: 10px;
+  outline: 5px solid @colorcream;
+  outline-offset: -15px;
+  img {
+    width: 350px;
+  }
+}
+
 // PASTRY START
 .pastry {
 	&__wrap {
@@ -266,6 +276,9 @@
 				height: 40px;
 				transition: @transition;
 			});
+			.xs-block({
+				margin-bottom: 100px;
+			});
 		}
 	}
 }
@@ -283,22 +296,150 @@
 		flex-direction: column;
 		background: url("../pict/img_bg2.png");
 		background-size: cover;
-		height: 700px;
+		height: 950px;
 	}
 	&__bread {
-		border: @border;
+		//border: @border;
 		height: 15%;
 		img {
 			position: relative;
-			top: -55px;
-			border: 1px solid green;
+			top: -51px;
+			//border: 1px solid green;
 			width: 100%;
+			transition: @transition;
+			.xxl-block({
+				top: -40px;
+				transition: @transition;
+			});
+			.xl-block({
+				top: -35px;
+				transition: @transition;
+			});
+			.lg-block({
+				top: -25px;
+				transform: scale(1.5, 1.5);
+			});
+			.md-block({
+				top: -20px;
+				transform: scale(2, 2);
+			});
+			.sm-block({
+				top: -15px;
+				transform: scale(2.5, 2.5);
+			});
+			.xs-block({
+				top: -10px;
+			});
 		}
 	}
 	&__content {
 		border: @border;
+		display: flex;
+		justify-content: center;
 		height: 85%;
 	}
+	&__leftcontent {
+		border: @border;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		width: 40%;
+	}
+	&__headertext {
+		//border: @border;
+		text-align: center;
+		color: @colortextdarkgray;
+		span {
+			font-size: 4rem;
+		}
+	}
+	&__create {
+        //border: @border;
+		text-align: center;
+		color: @colortextlightgray;
+		span {
+			font-size: 1.1rem;
+		}
+	}
+	&__describeart {
+		//border: @border;
+		align-self: center;
+		text-align: center;
+		width: 60%;
+		span {
+			color: @colortextdarkgray;
+		}
+	}
+	&__chefcook {
+		//border: @border;
+		text-align: center;
+		span {
+			font-size: 1.5rem;
+			color: @colortextdarkgray;
+		}
+	}
+	&__benitogaspare {
+		border: @border;
+		display: flex;
+		justify-content: center;
+		height: 100px;
+	}
+	&__benito {
+		border-bottom: 1px solid @colortextlightgray;
+		border-top: 1px solid @colortextlightgray;
+		align-self: center;
+	}
+	&__facepict {
+		//border: @border;
+	}
+	&__gaspare {
+		border-bottom: 1px solid @colortextlightgray;
+		border-top: 1px solid @colortextlightgray;
+		align-self: center;
+	}
+    &__autograph {
+      border: @border;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+    &__commatop {
+      border: @border;
+    }
+    &__citate {
+
+    }
+    &__commabottom {
+      border: @border;
+      display: flex;
+      justify-content: flex-end;
+      img {
+        border: @border;
+        align-self: flex-end;
+        transform: rotate(180deg);
+      }
+    }
+
+	&__rightcontent {
+		border: @border;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-wrap: wrap;
+		width: 40%;
+	}
+    &__oneblock {
+      .mixinblocktastes();
+    }
+    &__twoblock {
+      .mixinblocktastes();
+    }
+    &__threeblock {
+      .mixinblocktastes();
+    }
+    &__fourblock {
+      .mixinblocktastes();
+    }
 }
 // ART STOP
 
