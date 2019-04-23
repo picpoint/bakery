@@ -20,8 +20,11 @@
   margin: 10px;
   outline: 5px solid @colorcream;
   outline-offset: -15px;
+  width: 45%;
+  position: relative;
+  top: 130px;
   img {
-    width: 350px;
+    width: 100%;
   }
 }
 
@@ -296,11 +299,10 @@
 		flex-direction: column;
 		background: url("../pict/img_bg2.png");
 		background-size: cover;
-		height: 950px;
 	}
 	&__bread {
 		//border: @border;
-		height: 15%;
+		height: 1px;
 		img {
 			position: relative;
 			top: -51px;
@@ -333,13 +335,12 @@
 		}
 	}
 	&__content {
-		border: @border;
+		//border: @border;
 		display: flex;
 		justify-content: center;
-		height: 85%;
 	}
 	&__leftcontent {
-		border: @border;
+		//border: @border;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -357,6 +358,7 @@
         //border: @border;
 		text-align: center;
 		color: @colortextlightgray;
+		margin-bottom: 80px;
 		span {
 			font-size: 1.1rem;
 		}
@@ -366,6 +368,7 @@
 		align-self: center;
 		text-align: center;
 		width: 60%;
+		margin-bottom: 40px;
 		span {
 			color: @colortextdarkgray;
 		}
@@ -373,6 +376,7 @@
 	&__chefcook {
 		//border: @border;
 		text-align: center;
+		margin-bottom: 40px;
 		span {
 			font-size: 1.5rem;
 			color: @colortextdarkgray;
@@ -383,6 +387,7 @@
 		display: flex;
 		justify-content: center;
 		height: 100px;
+		margin-bottom: 40px;
 	}
 	&__benito {
 		border-bottom: 1px solid @colortextlightgray;
@@ -421,7 +426,7 @@
     }
 
 	&__rightcontent {
-		border: @border;
+		//border: @border;
         display: flex;
         justify-content: center;
         align-content: center;
@@ -439,6 +444,22 @@
     }
     &__fourblock {
       .mixinblocktastes();
+    }
+    &__fiveblock {
+      border: @border;
+      position: relative;
+      bottom: 38%;
+      img {
+        //position: absolute;
+        //top: 35%;
+      }
+      span {
+        position: absolute;
+        font-size: 2rem;
+        text-align: center;
+        top: 35%;
+        color: @colorgold;
+      }
     }
 }
 // ART STOP
