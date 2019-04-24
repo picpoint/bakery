@@ -25,6 +25,10 @@ const smartGrigConf = {
 				fields: '30px'   // отступ от края экрана
 		},
 		breakPoints: {
+      mgxl: {
+        width: '1800px',
+        fields: '30px'
+      },
       xxl: {
         width: '1400px',
         fields: '30px'
