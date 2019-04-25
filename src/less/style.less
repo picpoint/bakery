@@ -353,15 +353,25 @@
 		font-family: 'Lobster', cursive;
 		span {
 			font-size: 4rem;
+			transition: @transition;
+			.xxl-block({
+				font-size: 3rem;
+				transition: @transition;
+			});
 		}
 	}
 	&__create {
-        //border: @border;
+    //border: @border;
 		text-align: center;
 		color: @colortextlightgray;
 		margin-bottom: 50px;
 		span {
 			font-size: 1.1rem;
+			transition: @transition;
+			.xxl-block({
+				font-size: 0.9rem;
+				transition: @transition;
+			});
 		}
 	}
 	&__describeart {
@@ -373,6 +383,11 @@
 		font-family: 'Satisfy', cursive;
 		span {
 			color: @colortextdarkgray;
+			transition: @transition;
+			.xxl-block({
+				font-size: 0.8rem;
+				transition: @transition;
+			});
 		}
 	}
 	&__chefcook {
@@ -431,7 +446,7 @@
       //border: @border;
       display: flex;
       justify-content: flex-end;
-	  margin: 0 55px;
+	  	margin: 0 55px;
       img {
         align-self: flex-end;
         transform: rotate(180deg);
@@ -439,12 +454,12 @@
     }
 
 	&__rightcontent {
-		//border: @border;
-        display: flex;
-        justify-content: center;
-        align-content: center;
-        flex-wrap: wrap;
-		width: 40%;
+			border: @border;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      flex-wrap: wrap;
+			width: 40%;
 	}
     &__oneblock {
       .mixinblocktastes();
@@ -460,28 +475,47 @@
     }
     &__fiveblock {
       border: @border;
+			display: flex;
+			justify-content: center;
       position: relative;
-	  bottom: 35%;
-	  transition: @transition;
-	  .mgxl-block({
-	  	bottom: 33%;
-		transition: @transition;
-	  });
-	  .xxl-block({
-	  	bottom: 31%;
-	  	width: 220px;
-	  	height: 220px;
-		transition: @transition;
-	  });
+	  	bottom: 35%;
+			width: 240px;
+			height: 240px;
+			transition: @transition;
+	  	.mgxl-block({
+	  		bottom: 33%;
+				transition: @transition;
+	  	});
+	  	.xxl-block({
+	  		bottom: 30%;
+				width: 220px;
+				height: 220px;
+				transition: @transition;
+	  	});
+			.xl-block({
+				width: 180px;
+				height: 180px;
+			  bottom: 22%;
+			});
       img {
+				transition: @transition;
+				width: 100%;
+				.xxl-block({
 
+				});
       }
       span {
+				border: @border;
         position: absolute;
         font-size: 2rem;
         text-align: center;
         top: 35%;
         color: @colorgold;
+				transition: @transition;
+				.xxl-block({
+					font-size: 1.7rem;
+					transition: @transition;
+				});
       }
     }
 }
