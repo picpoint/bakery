@@ -16,13 +16,39 @@
 }
 
 .mixinblocktastes {
-  border: @border;
+  //border: @border;
   margin: 10px;
   outline: 5px solid @colorcream;
   outline-offset: -15px;
   width: 45%;
   position: relative;
   top: 130px;
+	transition: @transition;
+	.xl-block({
+		width: 40%;
+		transition: @transition;
+	});
+	.lg-block({
+		display: flex;
+		flex-direction: column;
+		width: 60%;
+		transition: @transition;
+		top: 50px;
+	});
+	.md-block({
+		width: 70%;
+		transition: @transition;
+		margin: 20px 0;
+	});
+	.sm-block({
+		width: 80%;
+		margin: 25px 0;
+		top: 5px;
+	});
+	.xs-block({
+		width: 95%;
+		margin: 30px 0;
+	});
   img {
     width: 100%;
   }
@@ -345,6 +371,11 @@
 		flex-direction: column;
 		justify-content: center;
 		width: 40%;
+		transition: @transition;
+		.xxl-block({
+			width: 45%;
+			transition: @transition;
+		});
 	}
 	&__headertext {
 		//border: @border;
@@ -424,13 +455,21 @@
 		//border: @border;
 		display: flex;
 		justify-content: center;
-		height: 100px;
 		margin-bottom: 40px;
 		font-family: 'Lobster', cursive;
 		font-size: 1.5rem;
 		transition: @transition;
 		.xxl-block({
 			margin-bottom: 20px;
+			transition: @transition;
+		});
+		.xl-block({
+			justify-content: space-between;
+			transition: @transition;
+		});
+		.lg-block({
+			flex-direction: column;
+			align-items: center;
 			transition: @transition;
 		});
 	}
@@ -440,19 +479,21 @@
 		align-self: center;
 		padding: 15px 25px;
 		margin: 0 35px;
+		transition: @transition;
+		.xxl-block({
+			font-size: 1.2rem;
+		});
+		.xl-block({
+			font-size: 1rem;
+		});
 	}
 	&__facepict {
 		//border: @border;
-		width: 100px;
-		height: 100px;
-		.xl-block({
-			width: 100px;
-			height: 100px;
-		});
-		img	{
-			//border: @border;
-			width: 100%;
-		}
+		width: 120px;
+		height: 120px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 	&__gaspare {
 		border-bottom: 1px solid @colortextlightgray;
@@ -460,40 +501,96 @@
 		align-self: center;
 		padding: 15px 25px;
 		margin: 0 35px;
+		transition: @transition;
+		.xxl-block({
+			font-size: 1.2rem;
+			transition: @transition;
+		});
+		.xl-block({
+			font-size: 1rem;
+		});
 	}
     &__autograph {
       //border: @border;
       display: flex;
       flex-direction: row;
       justify-content: center;
-		height: 100px;
+			height: 100px;
+			.xs-block({
+				display: none;
+			});
+
     }
     &__commatop {
       //border: @border;
-	  margin: 0 55px;
+	  	margin: 0 55px;
+			width: 30px;
+			transition: @transition;
+			.xl-block({
+				margin: 0 30px;
+				transition: @transition;
+			});
+			.lg-block({
+				margin: 0 10px;
+			});
+			.md-block({
+				display: none;
+			});
     }
     &__citate {
 		//border: @border;
 		align-self: center;
+		text-align: center;
+		transition: @transition;
+		img {
+			//border: @border;
+			width: 80%;
+			transition: @transition;
+			.md-block({
+				width: 100%;
+			});
+		}
+		.xl-block({
+			width: 400px;
+			transition: @transition;
+		});
     }
     &__commabottom {
       //border: @border;
       display: flex;
       justify-content: flex-end;
 	  	margin: 0 55px;
+			width: 30px;
+			transition: @transition;
+			.xl-block({
+				margin: 0 30px;
+				transition: @transition;
+			});
+			.lg-block({
+				margin: 0 10px;
+			});
+			.md-block({
+				display: none;
+			});
       img {
         align-self: flex-end;
         transform: rotate(180deg);
+				transition: @transition;
       }
     }
 
 	&__rightcontent {
-			border: @border;
+			//border: @border;
       display: flex;
       justify-content: center;
       align-content: center;
       flex-wrap: wrap;
 			width: 40%;
+			transition: @transition;
+			.xxl-block({
+				width: 45%;
+				transition: @transition;
+			});
 	}
     &__oneblock {
       .mixinblocktastes();
@@ -508,7 +605,7 @@
       .mixinblocktastes();
     }
     &__fiveblock {
-      border: @border;
+      //border: @border;
 			display: flex;
 			justify-content: center;
       position: relative;
@@ -529,17 +626,17 @@
 			.xl-block({
 				width: 180px;
 				height: 180px;
-			  bottom: 22%;
+			  bottom: 28%;
+			});
+			.lg-block({
+				display: none;
 			});
       img {
 				transition: @transition;
 				width: 100%;
-				.xxl-block({
-
-				});
       }
       span {
-				border: @border;
+				//border: @border;
         position: absolute;
         font-size: 2rem;
         text-align: center;
