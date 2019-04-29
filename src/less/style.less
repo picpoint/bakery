@@ -365,6 +365,9 @@
 		text-align: center;
 		color: @colortextlightgray;
 		margin-bottom: 50px;
+		.xxl-block({
+			margin-bottom: 40px;
+		});
 		span {
 			font-size: 1.1rem;
 			transition: @transition;
@@ -381,11 +384,17 @@
 		width: 60%;
 		margin-bottom: 40px;
 		font-family: 'Satisfy', cursive;
+		transition: @transition;
+		.xxl-block({
+			width: 65%;
+			margin-bottom: 20px;
+			transition: @transition;
+		});
 		span {
 			color: @colortextdarkgray;
 			transition: @transition;
 			.xxl-block({
-				font-size: 0.8rem;
+				font-size: 0.9rem;
 				transition: @transition;
 			});
 		}
@@ -395,10 +404,20 @@
 		text-align: center;
 		margin-bottom: 40px;
 		font-family: 'Lobster', cursive;
+		transition: @transition;
+		.xxl-block({
+			margin-bottom: 20px;
+			transition: @transition;
+		});
 		span {
 			font-size: 1.5rem;
 			font-weight: bolder;
 			color: @colortextdarkgray;
+			transition: @transition;
+			.xxl-block({
+				font-size: 1.3rem;
+				transition: @transition;
+			});
 		}
 	}
 	&__benitogaspare {
@@ -409,6 +428,11 @@
 		margin-bottom: 40px;
 		font-family: 'Lobster', cursive;
 		font-size: 1.5rem;
+		transition: @transition;
+		.xxl-block({
+			margin-bottom: 20px;
+			transition: @transition;
+		});
 	}
 	&__benito {
 		border-bottom: 1px solid @colortextlightgray;
@@ -419,6 +443,16 @@
 	}
 	&__facepict {
 		//border: @border;
+		width: 100px;
+		height: 100px;
+		.xl-block({
+			width: 100px;
+			height: 100px;
+		});
+		img	{
+			//border: @border;
+			width: 100%;
+		}
 	}
 	&__gaspare {
 		border-bottom: 1px solid @colortextlightgray;
