@@ -670,12 +670,23 @@
 		margin: 170px 0 150px 0;
 	}
 	&__centerblock {
-		//border: @border;
+		border: @border;
 		display: flex;
+		position: relative;
 		height: 100%;
 		width: 65%;
 		box-shadow: 0 0 50px rgba(0, 0, 0, 0.4);
+		transition: @transition;
 		.shift-right(1);
+		.xxl-block({
+			.shift-right(0);
+			width: 80%;
+		});
+		.xl-block({
+			.shift-right(0);
+			width: 85%;
+			transition: @transition;
+		});
 	}
 	&__fritter {
 		//border: @border;
@@ -705,16 +716,24 @@
 		//border: @border;
 		font-family: 'Lobster', cursive;
 		width: 80%;
-		font-size: 4rem;
+		font-size: 3.7rem;
 		align-self: center;
 		color: @colortextdarkgray;
+		transition: @transition;
+		.lg-block({
+			font-size: 3rem;
+			transition: @transition;
+		});
 	}
 	&__tastyseason {
 		//border: @border;
 		align-self: center;
-		//margin-top: 15px;
 		width: 80%;
 		color: @colortextlightgray;
+		.lg-block({
+			font-size: 0.9rem;
+			margin-top: 10px;
+		});
 	}
 	&__tastydescribe {
 		font-family: 'Satisfy', cursive;
@@ -724,6 +743,11 @@
 		margin: 70px 0;
 		width: 80%;
 		color: @colortextdarkgray;
+		transition: @transition;
+		.lg-block({
+			font-size: 0.9rem;
+			transition: @transition;
+		});
 	}
 	&__blockslider {
 		//border: @border;
@@ -740,14 +764,17 @@
 		button {
 			border-radius: 50%;
 			border: none;
-			width: 30px;
-			height: 30px;
+			width: 35px;
+			height: 35px;
 			background: none;
-			border: 1px solid @colortextdarkgray;
-			color: @colortextdarkgray;
+			border: 1px solid @colorbrowngray;
+			color: @colorbrowngray;
 			outline: none;
+			transition: @transitionfast;
 			&:active {
 				color: black;
+				border: 1px solid black;
+				transition: @transitionfast;
 			}
 		}
 	}
@@ -793,14 +820,17 @@
 		button {
 			border-radius: 50%;
 			border: none;
-			width: 30px;
-			height: 30px;
+			width: 35px;
+			height: 35px;
 			background: none;
-			border: 1px solid @colortextdarkgray;
-			color: @colortextdarkgray;
+			border: 1px solid @colorbrowngray;
+			color: @colorbrowngray;
 			outline: none;
+			transition: @transitionfast;
 			&:active {
 				color: black;
+				border: 1px solid black;
+				transition: @transitionfast;
 			}
 		}
 	}
@@ -811,8 +841,8 @@
 		justify-content: center;
 		align-items: center;
 		position: absolute;
-		left: 72%;
-		bottom: -145%;
+		left: 94%;
+		bottom: 400px;
 		z-index: 1;
 		width: 210px;
 		height: 210px;
