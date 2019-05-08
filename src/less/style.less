@@ -661,6 +661,9 @@
 		border: 1px solid transparent;
 		background: url("../pict/img_bg3.png");
 		background-size: cover;
+		.md-block({
+			height: 1200px;
+		});
 	}
 	&__generalblock {
 		//border: @border;
@@ -687,26 +690,37 @@
 			width: 85%;
 			transition: @transition;
 		});
+		.md-block({
+			.shift-right(0);
+			flex-direction: column;
+			width: 90%;
+			height: 850px;
+		});
 	}
 	&__fritter {
-		//border: @border;
+		border: @border;
 		width: 40%;
 		height: 100%;
 		background-image: url("../pict/pancakes.png");
 		background-size: cover;
+		.md-block({
+			width: 100%;
+		});
 	}
 	&__describefritter {
 		//border: @border;
 		width: 60%;
-		height: 100%;
 		background-color: white;
 		background-image: url("../pict/mill.png");
 		background-size: auto;
 		background-repeat: no-repeat;
 		background-position: right bottom;
+		.md-block({
+			width: 100%;
+		});
 	}
 	&__textpancakes {
-		//border: @border;
+		///border: @border;
 		display: flex;
 		justify-content: center;
 		flex-direction: column;
@@ -723,6 +737,9 @@
 		.lg-block({
 			font-size: 3rem;
 			transition: @transition;
+		});
+		.md-block({
+			font-size: 3.7rem;
 		});
 	}
 	&__tastyseason {
@@ -748,12 +765,19 @@
 			font-size: 0.9rem;
 			transition: @transition;
 		});
+		.md-block({
+			font-size: 1rem;
+			margin: 50px 0;
+		});
 	}
 	&__blockslider {
-		//border: @border;
+		border: @border;
 		display: flex;
 		justify-content: center;
 		height: 30%;
+		.md-block({
+			margin-bottom: 50px;
+		});
 	}
 	&__backbtn {
 		//border: @border;
@@ -788,7 +812,15 @@
 		img {
 			height: 100%;
 			border-radius: 50%;
+			.xl-block({
+				width: 100px;
+				height: 100px;
+			});
 		}
+		.xl-block({
+			width: 100px;
+			height: 100px;
+		});
 	}
 	&__secondimg {
 		//border: @border;
