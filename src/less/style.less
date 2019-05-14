@@ -710,14 +710,39 @@
 		});
 	}
 	&__stars {
-		border: @border;
+		//border: @border;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-around;
 		position: relative;
-		width: 4%;
-		height: 30%;
+		width: 5%;
+		height: 34%;
 		left: 5%;
+		transition: @transition;
+		.xxl-block({
+			width: 5%;
+			height: 32%;
+			transition: @transition;
+		});
+		.lg-block({
+			width: 7%;
+		});
+		.md-block({
+			flex-direction: row;
+			align-self: flex-end;
+			width: 45%;
+			height: 6%;
+			left: 25%;
+			margin-bottom: 10px;
+		});
+		.sm-block({
+			width: 60%;
+			height: 4%;
+			left: 20%;
+		});
+		.xs-block({
+			height: 5%;
+		});
 	}
 	&__describefritter {
 		//border: @border;
