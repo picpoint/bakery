@@ -661,8 +661,17 @@
 		border: 1px solid transparent;
 		background: url("../pict/img_bg3.png");
 		background-size: cover;
+		transition: @transition;
 		.md-block({
 			height: 1200px;
+			transition: @transition;
+		});
+		.lg-block({
+			margin-top: 100px;
+			transition: @transition;
+		});
+		.sm-block({
+			margin-top: 30px;
 		});
 	}
 	&__generalblock {
@@ -731,7 +740,7 @@
 			flex-direction: row;
 			align-self: flex-end;
 			width: 45%;
-			height: 6%;
+			height: 5%;
 			left: 25%;
 			margin-bottom: 10px;
 		});
@@ -1076,3 +1085,33 @@
 }
 
 // PANCAKES STOP
+
+// ------
+
+// BREAKFAST START
+
+.breakfast {
+	//border: @border;
+	height: 950px;
+	background-image: url("../pict/img_bg4.png");
+	background-size: cover;
+	&__wrap {
+		//border: @border;
+		display: flex;
+		height: 100%;
+		background-image: url("../pict/ear.png");
+		background-size: 25%;
+		background-repeat: no-repeat;
+		background-position: right bottom;
+	}
+	&__price {
+		border: @border;
+		width: 50%;
+	}
+	&__flair {
+		border: @border;
+		width: 50%;
+	}
+}
+
+// BREAKFAST STOP
