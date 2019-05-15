@@ -1098,6 +1098,7 @@
 	&__wrap {
 		//border: @border;
 		display: flex;
+		justify-content: center;
 		height: 100%;
 		background-image: url("../pict/ear.png");
 		background-size: 25%;
@@ -1105,12 +1106,55 @@
 		background-position: right bottom;
 	}
 	&__price {
-		border: @border;
-		width: 50%;
+		//border: @border;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 40%;
 	}
+	&__headertext {
+		color: @colorwhite;
+		font-size: 6rem;
+		font-family: 'Lobster', cursive;
+	}
+	&__opentime {
+		color: @colorredgold;
+		font-weight: bold;
+		font-size: 1.3rem;
+		margin-bottom: 70px;
+	}
+	&__brkprice {
+		//border: @border;
+		text-align: center;
+		margin: 30px 0;
+		text-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+	}
+	&__brkfull {
+		font-size: 2.1rem;
+		color: @colorwhite;
+		font-weight: bold;
+	}
+	&__brkfulldescr {
+		color: @colorgray;
+		font-size: 1.2rem;
+	}
+	&__brkfulldollor {
+		color: @colorgold;
+		font-weight: bold;
+		font-size: 2rem;
+		margin-top: 20px;
+	}
+	&__ears {
+		//border: @border;
+	}
+
+
+
+
 	&__flair {
 		border: @border;
-		width: 50%;
+		width: 40%;
 	}
 }
 
