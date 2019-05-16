@@ -1106,12 +1106,12 @@
 		background-position: right bottom;
 	}
 	&__price {
-		//border: @border;
+		border: @border;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		width: 40%;
+		width: 35%;
 	}
 	&__headertext {
 		color: @colorwhite;
@@ -1119,10 +1119,10 @@
 		font-family: 'Lobster', cursive;
 	}
 	&__opentime {
-		color: @colorredgold;
+		color: @colorlightbrown;
 		font-weight: bold;
-		font-size: 1.3rem;
-		margin-bottom: 70px;
+		font-size: 1.1rem;
+		margin-bottom: 50px;
 	}
 	&__brkprice {
 		//border: @border;
@@ -1150,12 +1150,81 @@
 	}
 
 
-
-
 	&__flair {
 		border: @border;
 		width: 40%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
+	&__flaircover {
+		//border: @border;
+		display: flex;
+		flex-direction: column;
+		height: 75%;
+		width: 70%;
+		background-image: url("../pict/flair_bg2.png");
+		background-size: cover;
+		box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+		outline: 2px dashed @colortextlightgray;
+		outline-offset: -15px;
+	}
+	&__est {
+		border: @border;
+		display: flex;
+		justify-content: space-around;
+		span {
+			font-size: 1.2rem;
+			font-weight: bold;
+			color: @colortextdarkgray;
+		}
+	}
+	&__bagel {
+		border: @border;
+		display: flex;
+		justify-content: center;
+		align-self: center;
+		width: 100%;
+		height: 75px;
+		img {
+			border: @border;
+			width: 85%;
+		}
+	}
+	&__escape {
+		border: @border;
+		align-self: center;
+		font-size: 3.5rem;
+		width: 80%;
+		color: @colortextdarkgray;
+		text-align: center;
+	}
+	&__escdescribe {
+		border: @border;
+		align-self: center;
+		width: 80%;
+		color: @colortextdarkgray;
+		text-align: center;
+	}
+	&__btnread {
+		align-self: center;
+		button {
+			border: 1px solid @colortextdarkgray;
+			font-size: 1.7rem;
+			width: 210px;
+			height: 60px;
+			background-color: transparent;
+			cursor: pointer;
+			outline:0;
+		}
+	}
+	&__triangle {
+		border: @border;
+		width: 27px;
+		height: 27px;
+		position: relative;
+	}
+
 }
 
 // BREAKFAST STOP
