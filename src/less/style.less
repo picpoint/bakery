@@ -1100,10 +1100,10 @@
 		display: flex;
 		justify-content: center;
 		height: 100%;
-		background-image: url("../pict/ear.png");
-		background-size: 25%;
-		background-repeat: no-repeat;
-		background-position: right bottom;
+		//background-image: url("../pict/ear.png");
+		//background-size: 25%;
+		//background-repeat: no-repeat;
+		//background-position: right bottom;
 	}
 	&__price {
 		border: @border;
@@ -1160,6 +1160,7 @@
 	&__flaircover {
 		//border: @border;
 		display: flex;
+		justify-content: space-between;
 		flex-direction: column;
 		height: 75%;
 		width: 70%;
@@ -1170,9 +1171,10 @@
 		outline-offset: -15px;
 	}
 	&__est {
-		border: @border;
+		//border: @border;
 		display: flex;
 		justify-content: space-around;
+		margin-top: 50px;
 		span {
 			font-size: 1.2rem;
 			font-weight: bold;
@@ -1180,38 +1182,46 @@
 		}
 	}
 	&__bagel {
-		border: @border;
+		//border: @border;
 		display: flex;
 		justify-content: center;
 		align-self: center;
-		width: 100%;
-		height: 75px;
+		width: 95%;
+		height: 100%;
+		margin-top: 10px;
 		img {
-			border: @border;
-			width: 85%;
+			//border: @border;
+			width: 80%;
 		}
 	}
 	&__escape {
-		border: @border;
+		//border: @border;
 		align-self: center;
 		font-size: 3.5rem;
 		width: 80%;
 		color: @colortextdarkgray;
 		text-align: center;
+		margin: 70px 0 50px 0;
 	}
 	&__escdescribe {
-		border: @border;
+		//border: @border;
 		align-self: center;
 		width: 80%;
 		color: @colortextdarkgray;
 		text-align: center;
+		font-size: 1.2rem;
+		line-height: 35px;
+		letter-spacing: 1px;
 	}
 	&__btnread {
 		align-self: center;
+		margin-top: 55px;
 		button {
 			border: 1px solid @colortextdarkgray;
-			font-size: 1.7rem;
-			width: 210px;
+			font-size: 1.5rem;
+			font-weight: bold;
+			color: @colorredgold;
+			width: 230px;
 			height: 60px;
 			background-color: transparent;
 			cursor: pointer;
@@ -1219,10 +1229,21 @@
 		}
 	}
 	&__triangle {
-		border: @border;
+		//border: @border;
+		position: relative;
 		width: 27px;
 		height: 27px;
-		position: relative;
+		margin-top: 70px;
+	}
+	&__ear {
+		border: @border;
+		position: absolute;
+		width: 100%;
+		height: 90%;
+		background-image: url("../pict/ear.png");
+		background-size: 29%;
+		background-repeat: no-repeat;
+		background-position: right bottom;
 	}
 
 }
