@@ -1100,21 +1100,32 @@
 		display: flex;
 		justify-content: center;
 		height: 100%;
-		//background-image: url("../pict/ear.png");
-		//background-size: 25%;
-		//background-repeat: no-repeat;
-		//background-position: right bottom;
+		.md-block({
+			flex-direction: column;
+		});
 	}
 	&__price {
-		border: @border;
+		//border: @border;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		width: 35%;
+		transition: @transition;
+		.xl-block({
+			width: 45%;
+		});
+		.lg-block({
+			width: 48%;
+			transition: @transition;
+		});
+		.md-block({
+			width: 95%;
+			height: 50%;
+		});
 	}
 	&__headertext {
-		border: @border;
+		//border: @border;
 		color: @colorwhite;
 		font-size: 6rem;
 		font-family: 'Lobster', cursive;
@@ -1152,20 +1163,33 @@
 			text-align: center;
 			flex-wrap: wrap;
 		});
+		.md-block({
+			margin-bottom: 10px;
+		});
 	}
 	&__brkprice {
 		//border: @border;
 		text-align: center;
 		margin: 30px 0;
+		transition: @transition;
+		.xl-block({
+			text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+			             0px 8px 8px rgba(0,0,0,0.4),
+			             0px 18px 18px rgba(0,0,0,0.4);
+			transition: @transition;
+		});
+		.lg-block({
+			margin: 10px 0;
+		});
+		.md-block({
+			margin: 0;
+		});
 	}
 	&__brkfull {
-		border: @border;
+		//border: @border;
 		font-size: 2.1rem;
 		color: @colorwhite;
 		font-weight: bold;
-		text-shadow: 0px 4px 3px rgba(0,0,0,0.5),
-		             0px 8px 13px rgba(0,0,0,0.5),
-		             0px 18px 23px rgba(0,0,0,0.5);
 		transition: @transition;
 		.lg-block({
 			font-size: 1.8rem;
@@ -1173,11 +1197,17 @@
 		});
 	}
 	&__brkfulldescr {
-		border: @border;
-		color: @colorgray;
+		//border: @border;
+		color: white;
+		font-weight: bolder;
 		font-size: 1.2rem;
+		transition: @transition;
 		.lg-block({
 			//box-shadow: 0 0 50px rgba(0, 0, 0, 0.4);
+		});
+		.sm-block({
+			font-size: 1rem;
+			transition: @transition;
 		});
 	}
 	&__brkfulldollor {
@@ -1185,13 +1215,34 @@
 		font-weight: bold;
 		font-size: 2rem;
 		margin-top: 20px;
+		transition: @transition;
+		.lg-block({
+			color: @colordarkgold;
+			transition: @transition;
+		});
+		.md-block({
+			margin: 0;
+		});
 	}
 	&__flair {
-		border: @border;
+		//border: @border;
 		width: 40%;
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		transition: @transition;
+		.xl-block({
+			width: 45%;
+		});
+		.lg-block({
+			width: 48%;
+			transition: @transition;
+		});
+		.md-block({
+			width: 95%;
+			height: 50%;
+			margin: 30px 0;
+		});
 	}
 	&__flaircover {
 		//border: @border;
@@ -1199,12 +1250,26 @@
 		justify-content: space-between;
 		flex-direction: column;
 		height: 75%;
-		width: 70%;
+		width: 80%;
 		background-image: url("../pict/flair_bg2.png");
 		background-size: cover;
 		box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
 		outline: 2px dashed @colortextlightgray;
 		outline-offset: -15px;
+		transition: @transition;
+		.xxl-block({
+			width: 95%;
+			transition: @transition;
+		});
+		.xl-block({
+			height: 70%;
+		});
+		.lg-block({
+			height: 65%;
+		});
+		.md-block({
+			height: 99%;
+		});
 	}
 	&__est {
 		//border: @border;
@@ -1215,6 +1280,9 @@
 			font-size: 1.2rem;
 			font-weight: bold;
 			color: @colortextdarkgray;
+			.lg-block({
+				font-size: 1rem;
+			});
 		}
 	}
 	&__bagel {
@@ -1225,10 +1293,27 @@
 		width: 100%;
 		height: 10%;
 		margin-top: -50px;
+		transition: @transition;
 		img {
-			//border: @border;
 			width: 85%;
 		}
+		.xxl-block({
+			height: 8%;
+		});
+		.xl-block({
+			width: 95%;
+			height: 9%;
+			transition: @transition;
+		});
+		.lg-block({
+			height: 8%;
+		});
+		.md-block({
+			height: 15%;
+		});
+		.xs-block({
+			height: 12%;
+		});
 	}
 	&__escape {
 		//border: @border;
@@ -1237,7 +1322,23 @@
 		width: 80%;
 		color: @colortextdarkgray;
 		text-align: center;
-		//margin: 70px 0 50px 0;
+		transition: @transition;
+		.xl-block({
+			font-size: 3rem;
+			transition: @transition;
+		});
+		.lg-block({
+			font-size: 2rem;
+			transition: @transition;
+		});
+		.md-block({
+			font-size: 1.7rem;
+			transition: @transition;
+		});
+		.xs-block({
+			font-size: 1.5rem;
+			transition: @transition;
+		});
 	}
 	&__escdescribe {
 		//border: @border;
@@ -1248,10 +1349,18 @@
 		font-size: 1.2rem;
 		line-height: 35px;
 		letter-spacing: 1px;
+		.lg-block({
+			font-size: 1rem;
+			letter-spacing: 0;
+		});
+		.sm-block({
+			font-size: 0.9rem;
+			line-height: 20px;
+		});
 	}
 	&__btnread {
 		align-self: center;
-		//margin-top: 55px;
+		margin-bottom: 30px;
 		button {
 			border: 1px solid @colortextdarkgray;
 			font-size: 1.5rem;
@@ -1262,17 +1371,17 @@
 			background-color: transparent;
 			cursor: pointer;
 			outline:0;
+			transition: @transition;
+			.xl-block({
+				width: 170px;
+				height: 45px;
+				font-size: 1.2rem;
+				transition: @transition;
+			});
 		}
 	}
-	&__triangle {
-		//border: @border;
-		position: relative;
-		width: 27px;
-		height: 27px;
-		//margin-top: 70px;
-	}
 	&__ear {
-		border: @border;
+		//border: @border;
 		position: absolute;
 		width: 100%;
 		height: 100%;
@@ -1285,3 +1394,17 @@
 }
 
 // BREAKFAST STOP
+
+// ------------------
+
+// SANDWICH START
+
+.sandwich {
+	background-color: @colorsandwich;
+	height: 1000px;
+	&__wrap {
+
+	}
+}
+
+// SANDWICH STOP
