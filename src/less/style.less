@@ -1415,24 +1415,77 @@
 	&__villageimg {
 		//border: @border;
 		height: 20%;
+		transition: @transition;
+		.xl-block({
+			width: 50%;
+			transition: @transition;
+		});
+		.lg-block({
+			width: 65%;
+		});
+		.md-block({
+			width: 75%;
+		});
+		.sm-block({
+			width: 90%;
+		});
 	}
 	&__villagehdrtxt {
 		position: relative;
 		top: -45px;
+		transition: @transition;
+		text-align: center;
+		.md-block({
+			top: -20px;
+			transition: @transition;
+		});
+		.sm-block({
+			top: 0;
+			margin-top: 10px;
+			transition: @transition;
+		});
 		span {
 			font-size: 3rem;
 			font-weight: bold;
 			color: @colortextdarkgray;
+			transition: @transition;
+			.xl-block({
+				font-size: 2.5rem;
+				transition: @transition;
+			});
+			.md-block({
+				font-size: 2rem;
+			});
+			.xs-block({
+				font-size: 1.3rem;
+			});
 		}
 	}
 	&__villagetext {
 		//border: @border;
 		position: relative;
 		top: -45px;
+		text-align: center;
+		transition: @transition;
+		.md-block({
+			top: -20px;
+			transition: @transition;
+		});
+		.sm-block({
+			top: 0;
+		});
 		span {
 			font-size: 0.9rem;
 			font-weight: bolder;
 			color: @colorredgold;
+			transition: @transition;
+			.md-block({
+				font-size: 1rem;
+				transition: @transition;
+			});
+			.sm-block({
+				font-size: 0.7rem;
+			});
 		}
 	}
   &__dishes {
@@ -1482,9 +1535,10 @@
 		color: @colortextdarkgray;
 	}
   &__dishesright {
-      border: @border;
+      //border: @border;
 			display: flex;
 			justify-content: center;
+			flex-direction: row-reverse;
 			align-items: center;
       width: 65%;
       //height: 100%;
@@ -1498,33 +1552,147 @@
 			box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
 		}
 	}
+	&__recipebtn {
+		//border: @border;
+		position: absolute;
+		left: 43%;
+		bottom: -3770px;
+		button {
+			width: 160px;
+			height: 50px;
+			background-color: white;
+			border: 1px dashed @colorlightgold;
+			color: @colorlightgold;
+			font-weight: bolder;
+			outline: none;
+			cursor: pointer;
+		}
+	}
 	&__pcr {
-		border: @border;
+		//border: @border;
 		display: flex;
 		flex-direction: column;
 		position: absolute;
 		left: 79%;
 		width: 220px;
-		height: 65%;
+		height: 67%;
 	}
 	&__prep {
-		border: @border;
-		background-color: rgba(255, 255, 255, 0.8);
+		//border: @border;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+		background-color: rgba(255, 255, 255, 0.6);
 		flex-grow: 1;
 		margin-top: 1px;
+		box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
+	}
+	&__textprep {
+		span {
+			font-size: 1.3rem;
+			font-weight: bolder;
+			color: @colordarkgold;
+		}
+	}
+	&__texttime {
+		span {
+			font-size: 5rem;
+			font-weight: bolder;
+			color: @colortextdarkgray;
+		}
+	}
+	&__textmin {
+		span {
+			color: @colorgray;
+		}
 	}
 	&__cook {
-		border: @border;
-		background-color: rgba(255, 255, 255, 0.8);
+		//border: @border;
+		background-color: rgba(255, 255, 255, 0.6);
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
 		flex-grow: 1;
 		margin-top: 1px;
 	}
+	&__textcook {
+		span {
+			font-size: 1.3rem;
+			font-weight: bolder;
+			color: @colordarkgold;
+		}
+	}
 	&__ready {
-		border: @border;
+		//border: @border;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
 		background-image: url("../pict/ready_bg.png");
 		background-size: cover;
 		flex-grow: 1;
 		margin-top: 1px;
+	}
+	&__textready {
+		span {
+			font-size: 1.3rem;
+			font-weight: bolder;
+			color: @colordarkgold;
+		}
+	}
+	&__textreadytime {
+		span {
+			font-size: 5rem;
+			font-weight: bolder;
+			color: @colorlightgold;
+		}
+	}
+	&__footermenu {
+		display: flex;
+		justify-content: center;
+		margin: 70px 0;
+	}
+	&__footermenuleft {
+		//border: @border;
+		border-top: 1px solid @colorgray;
+		border-bottom: 1px solid @colorgray;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		align-self: center;
+		width: 30%;
+		height: 40%;
+		font-size: 1.1rem;
+		margin-right: 70px;
+		a {
+			color: @colortextdarkgray;
+			text-decoration: none;
+			margin: 30px 0;
+		}
+	}
+	&__footerlogo {
+		width: 10%;
+		align-self: center;
+	}
+	&__footermenuright {
+		//border: @border;
+		border-top: 1px solid @colorgray;
+		border-bottom: 1px solid @colorgray;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		align-self: center;
+		width: 30%;
+		height: 40%;
+		font-size: 1.1rem;
+		margin-left: 70px;
+		a {
+			color: @colortextdarkgray;
+			text-decoration: none;
+			margin: 30px 0;
+		}
 	}
 }
 
