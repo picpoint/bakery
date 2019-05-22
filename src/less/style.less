@@ -1489,18 +1489,29 @@
 		}
 	}
   &__dishes {
-      //border: @border;
+      border: @border;
       height: 100%;
       display: flex;
+			.md-block({
+				flex-direction: column;
+			});
   }
   &__dishesleft {
-      //border: @border;
+      border: @border;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
       width: 35%;
       height: 100%;
+			transition: @transition;
+			.xxl-block({
+				width: 30%;
+				transition: @transition;
+			});
+			.md-block({
+				width: 100%;
+			});
   }
   &__dishesblock {
       //border: @border;
@@ -1513,9 +1524,26 @@
       //border: @border;
       height: 120px;
       width: 120px;
+			transition: @transition;
+			.md-block({
+				height: 170px;
+				width: 170px;
+				transition: @transition;
+			});
+			.sm-block({
+				height: 140px;
+				width: 140px;
+				transition: @transition;
+			});
+			.xs-block({
+				height: 120px;
+				width: 120px;
+				transition: @transition;
+			});
       img {
         height: 100%;
         width: 100%;
+				transition: @transition;
       }
   }
 	&__disheshdr {
@@ -1525,14 +1553,45 @@
 			font-size: 1.8rem;
 			font-weight: bolder;
 			color: @colordarkgold;
+			transition: @transition;
+			.xl-block({
+				font-size: 1.5rem;
+				transition: @transition;
+			});
+			.md-block({
+				font-size: 2rem;
+				transition: @transition;
+			});
+			.sm-block({
+				font-size: 1.6rem;
+				transition: @transition;
+			});
 		}
 	}
 	&__dishestext {
-		//border: @border;
+		border: @border;
 		width: 80%;
 		text-align: center;
 		margin-top: 20px;
 		color: @colortextdarkgray;
+		transition: @transition;
+		.xl-block({
+			width: 70%;
+			transition: @transition;
+		});
+		.md-block({
+			width: 85%;
+			font-size: 1.2rem;
+			transition: @transition;
+		});
+		.sm-block({
+			font-size: 1rem;
+			transition: @transition;
+		});
+		.xs-block({
+			width: 70%;
+			transition: @transition;
+		});
 	}
   &__dishesright {
       //border: @border;
@@ -1541,7 +1600,6 @@
 			flex-direction: row-reverse;
 			align-items: center;
       width: 65%;
-      //height: 100%;
   }
 	&__hamburger {
 		//border: @border;
