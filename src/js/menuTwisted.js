@@ -1,15 +1,13 @@
 //1) Меню скручивается в гамбурер и обратно (JS)
 
+const hmbrgr = document.querySelector('.hmbrgr');
+const pastryMenuBlock = document.querySelector('.pastry__menublock');
+
 function menuTwisted() {
   const widthWin = document.documentElement.clientWidth;
   const heightWin = document.documentElement.clientHeight;
-	const pastryMenu = document.querySelector('.pastry__menu');
 	const pastryHeaderMeny = document.querySelector('.pastry__headerMenu');
-	const hmbrgr = document.querySelector('.hmbrgr');
-  //console.log(widthWin);
-  //console.log(pastryHeaderMeny);
-  //console.log(pastryMenu);
-  console.log(hmbrgr);
+  const pastryMenu = document.querySelector('.pastry__menu');
 
   if (widthWin <= 480) {
     pastryMenu.style.display = 'none';
@@ -20,8 +18,15 @@ function menuTwisted() {
 		pastryHeaderMeny.style.height = 'auto';
 		hmbrgr.style.display = 'none';
   }
+
 }
 
 window.addEventListener('resize', menuTwisted);
+
+hmbrgr.addEventListener('click', function () {
+  pastryMenuBlock.classList.toggle('xs-block');
+  console.log(pastryMenuBlock);
+});
+
 
 //menuTwisted();
