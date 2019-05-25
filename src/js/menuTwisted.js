@@ -25,7 +25,7 @@ hmbrgr.addEventListener('click', function () {                             // в
   if (pastryMenu.classList.contains('showmenu')) {                         // если меню содержит класс showmenu
   	hmbrgr.lastElementChild.setAttribute('src', 'pict/close.png');         // у элемента гамбургер устанавливаем атрибут картинки в крестик
 	} else {                                                                 // иначе
-		hmbrgr.lastElementChild.setAttribute('src', 'pict/hmbrgr.png');        // устанавливаем картинку гамбургера 
+		hmbrgr.lastElementChild.setAttribute('src', 'pict/hmbrgr.png');        // устанавливаем картинку гамбургера
 	}
 });
 
