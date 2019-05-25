@@ -15,8 +15,20 @@
 	box-sizing: border-box;
 }
 
+
+.showmenu {
+	display: flex!important;
+	position: absolute;
+	top: 140px;
+	justify-content: center;
+	width: 70%!important;
+	background-color: rgba(0, 0, 0, 0.7);
+	border-radius: 10px;
+}
+
+
 .hmbrgr {
-	border: @border;
+	//border: @border;
 	display: none;
 	position: absolute;
 	right: 5%;
@@ -29,18 +41,25 @@
 
 @keyframes hmbrgrscale {
 	0% {transform: scale(1, 1)}
-  50% {transform: scale(1.1, 1.1)}
+  50% {transform: scale(1.2, 1.2)}
 	100% {transform: scale(1, 1)}
 }
 
-.xs-block({
+/*
+.showmenu({
+	display: flex !important;
 	position: relative;
-	display: flex;
 	left: 150px;
 	width: 30%;
+	.xs-block({
+		display: flex !important;
+		position: relative;
+		left: 150px;
+		width: 30%;
+	});
 	//align-items: flex-end;
 });
-
+*/
 
 
 .mixinblocktastes {
@@ -88,6 +107,7 @@
 		background-size: cover;
 	}
 	&__headerMenu {
+		//border: @border;
 		display: flex;
 		justify-content: center;
 		height: 80px;
@@ -105,7 +125,7 @@
 		});
 	}
 	&__block {
-		border: @border;
+		//border: @border;
 		width: 83%;
 		display: flex;
 		font-family: 'Dancing Script', cursive;
@@ -153,7 +173,7 @@
 		});
 	}
 	&__menublock {
-		border: @border;
+		//border: @border;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -233,6 +253,7 @@
 		}
 	}
 	&__withlove {
+		//border: @border;
 		height: 100vh;
 		display: flex;
 		flex-direction: column;
@@ -240,11 +261,27 @@
 		color: white;
 	}
 	&__textlove {
+		//border: @border;
 		display: flex;
 		justify-content: center;
 		align-self: center;
 		width: 90%;
 		margin-bottom: 20px;
+		.mgxl-block({
+			margin-top: 50px;
+		});
+		.xxl-block({
+			margin-top: 50px;
+		});
+		.md-block({
+			margin-top: 20px;
+		});
+		.sm-block({
+			margin-top: 80px;
+		});
+		.xs-block({
+			margin-top: 450px;
+		});
 		span {
 			text-align: center;
 			font-family: 'Courgette', cursive;
@@ -257,10 +294,16 @@
 				transition: @transition;
 			});
 			.lg-block({
-				font-size: 6rem;
+				font-size: 5rem;
+			});
+			.md-block({
+				font-size: 5rem;
 			});
 			.sm-block({
 				font-size: 5rem;
+			});
+			.xs-block({
+				font-size: 2.5rem;
 			});
 		}
 	}
