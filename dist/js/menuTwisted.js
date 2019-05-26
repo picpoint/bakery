@@ -8,6 +8,7 @@ function menuTwisted() {                                                   // ф
   if (widthWin <= 480) {                                                   // если ширина экрана <= 480
     pastryMenu.style.display = 'none';                                     // меню скрываем
     hmbrgr.style.display = 'block';                                        // показываем значёк гамбугрера
+		hmbrgr.style.position = 'fixed';
   } else {                                                                 // иначе
     pastryMenu.style.display = 'flex';                                     // меню показываем и делаем его flex
 		pastryMenu.classList.remove('showmenu');                               // удаляем класс showmenu
