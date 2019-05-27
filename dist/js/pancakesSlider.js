@@ -32,47 +32,69 @@ let arrnumb = [
 	'../pict/slide/10.jpg'
 ];
 
-function previewPictfirst (arr) {
-	//count++;
-	for (let i = 0; i < arr.length; i++) {
-		if (count >= arr.length) {
-			count = 0;
-		} else {
-			return arr[--count];
-		}
+function firstPictRight (arr) {
+	count++;
+	if (count >= arr.length) {
+		count = 0;
 	}
+	return arr[count];
 }
 
 
-function previewPictsecond (arr) {
-	for (let i = 1; i < arr.length; i++) {
-		if (count >= arr.length) {
-			count = 0;
-		} else {
-			return arr[++count];
-		}
+function secondtPictRight (arr) {
+	count++;
+	if (count >= arr.length) {
+		count = 0;
 	}
+	return arr[count];
 }
 
-function previewPictthird (arr) {
-	for (let i = 2; i < arr.length; i++) {
-		if (count >= arr.length) {
-			count = 0;
-		} else {
-			return arr[++count];
-		}
+
+function thirdPictRight (arr) {
+	count++;
+	if (count >= arr.length) {
+		count = 0;
 	}
+	return arr[count];
 }
 
-/*
+
+
+function firstPictLeft (arr) {
+	--count;
+	if (count < 0) {
+		count = arr.length - 1;
+	}
+	return arr[count];
+}
+
+function secondPictLeft (arr) {
+	--count;
+	if (count <= 0) {
+		count = arr.length;
+	}
+	return arr[count];
+}
+
+function thirdPictLeft (arr) {
+	--count;
+	if (count <= 0) {
+		count = arr.length;
+	}
+	return arr[count];
+}
+
+
 backbtn.addEventListener('click', function () {
-
+	thirdimg.lastElementChild.setAttribute('src', firstPictLeft(arrnumb));
+	secondimg.lastElementChild.setAttribute('src', firstPictLeft(arrnumb));
+	firstimg.lastElementChild.setAttribute('src', firstPictLeft(arrnumb));
 });
-*/
+
 
 
 forvardbtn.addEventListener('click', function () {
-	firstimg.lastElementChild.setAttribute('src', previewPictfirst(arrnumb));
-	secondimg.lastElementChild.setAttribute('src', previewPictsecond(arrnumb));
-	thirdimg.lastElementChild.setAttribute('src', previewPictthird(arrnumb));
+	firstimg.lastElementChild.setAttribute('src', firstPictRight(arrnumb));
+	secondimg.lastElementChild.setAttribute('src', secondtPictRight(arrnumb));
+	thirdimg.lastElementChild.setAttribute('src', thirdPictRight(arrnumb));
 });
