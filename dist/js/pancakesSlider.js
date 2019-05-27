@@ -70,7 +70,7 @@ function firstPictLeft (arr) {
 
 function secondPictLeft (arr) {
 	--count;
-	if (count <= 0) {
+	if (count < 0) {
 		count = arr.length;
 	}
 	return arr[count];
@@ -78,7 +78,7 @@ function secondPictLeft (arr) {
 
 function thirdPictLeft (arr) {
 	--count;
-	if (count <= 0) {
+	if (count < 0) {
 		count = arr.length;
 	}
 	return arr[count];
