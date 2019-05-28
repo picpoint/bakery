@@ -1,21 +1,21 @@
 const blockstars = document.querySelector('.pancakes__stars');
 const stars = blockstars.children;
 
-// function setRaiting(arr, e) {
-// 	for (let i = 0; i < arr.length; i++) {
-// 		if (arr[i] == e.target) {
-// 			console.log(e.target);
-// 		}
-// 	}
-// }
-//
-// setRaiting(stars);
 
-//console.log(stars);
+function setRaiting (arr) {
 
-
-blockstars.addEventListener('click', function (e) {
-	for (let i = 0; i < stars.length; i++) {
-		console.log(stars[i]);
+	for (let i = 0; i < arr.length; ++i) {
+		stars[i].addEventListener('mouseover', function (e) {
+			for (let j = 0; j <= i; ++j) {
+				stars[j].setAttribute('src', 'pict/star_solid.png');
+			}
+			stars[i+1].setAttribute('src', 'pict/star_transparent.png');
+			console.log(i+1);
+		});
 	}
-});
+
+
+}
+
+setRaiting(stars);
+
