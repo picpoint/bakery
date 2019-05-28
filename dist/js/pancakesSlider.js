@@ -1,12 +1,12 @@
-const backbtn = document.querySelector('.pancakes__backbtn');
-const forvardbtn = document.querySelector('.pancakes__forvardbtn');
-const firstimg = document.querySelector('.pancakes__firstimg');
-const secondimg = document.querySelector('.pancakes__secondimg');
-const thirdimg = document.querySelector('.pancakes__thirdimg');
+const backbtn = document.querySelector('.pancakes__backbtn');       // доступ к кнопке backbtn "назад"
+const forvardbtn = document.querySelector('.pancakes__forvardbtn'); // доступ к кнопке forvardbtn "вперёд"
+const firstimg = document.querySelector('.pancakes__firstimg');     // доступ к первому блоку с изображением
+const secondimg = document.querySelector('.pancakes__secondimg');   // доступ ко второму блоку с изображением
+const thirdimg = document.querySelector('.pancakes__thirdimg');     // доступ к третьему блоку с изображением
 
-let count = 0;
+let count = 0;                                                      // общий счетчик
 
-let arrslide = [
+let arrslide = [                                                    // массив с путями к картинкам для слайдера
 	'../pict/slide/bekkon.png',
 	'../pict/slide/berries.png',
 	'../pict/slide/cheese.png',
@@ -32,7 +32,16 @@ let arrnumb = [
 	'../pict/slide/10.jpg'
 ];
 
-function firstPictRight (arr) {
+function firstPictRight (arr) {                                     // ф-ия для переключения 1го блока вперёд
+	count++;                                                          // наращиваем счётчик, т.к. при первом клике картинка долдна меняться на следующую
+	if (count >= arr.length) {                                        // если счетчик > длинны массива
+		count = 0;                                                      // сбрасываем счетчик на первый элемент массива
+	}
+	return arr[count];                                                // возвращаем элемент массива и подставляем соответствующую картинку
+}
+
+
+function secondtPictRight (arr) {                                   // ф-ия для переключения 2го блока вперёд
 	count++;
 	if (count >= arr.length) {
 		count = 0;
@@ -41,16 +50,7 @@ function firstPictRight (arr) {
 }
 
 
-function secondtPictRight (arr) {
-	count++;
-	if (count >= arr.length) {
-		count = 0;
-	}
-	return arr[count];
-}
-
-
-function thirdPictRight (arr) {
+function thirdPictRight (arr) {                                     // ф-ия для переключения 3го блока вперёд
 	count++;
 	if (count >= arr.length) {
 		count = 0;
@@ -60,7 +60,7 @@ function thirdPictRight (arr) {
 
 
 
-function firstPictLeft (arr) {
+function firstPictLeft (arr) {                                      // ф-ия для переключения 1го блока назад
 	--count;
 	if (count < 0) {
 		count = arr.length - 1;
@@ -68,7 +68,7 @@ function firstPictLeft (arr) {
 	return arr[count];
 }
 
-function secondPictLeft (arr) {
+function secondPictLeft (arr) {                                     // ф-ия для переключения 2го блока назад
 	--count;
 	if (count < 0) {
 		count = arr.length;
@@ -76,7 +76,7 @@ function secondPictLeft (arr) {
 	return arr[count];
 }
 
-function thirdPictLeft (arr) {
+function thirdPictLeft (arr) {                                      // ф-ия для переключения 3го блока назад
 	--count;
 	if (count < 0) {
 		count = arr.length;
@@ -85,16 +85,15 @@ function thirdPictLeft (arr) {
 }
 
 
-backbtn.addEventListener('click', function () {
-	thirdimg.lastElementChild.setAttribute('src', firstPictLeft(arrnumb));
-	secondimg.lastElementChild.setAttribute('src', firstPictLeft(arrnumb));
-	firstimg.lastElementChild.setAttribute('src', firstPictLeft(arrnumb));
+backbtn.addEventListener('click', function () {                     // вешаем событие на кнопку "назад"
+	thirdimg.lastElementChild.setAttribute('src', firstPictLeft(arrnumb)); // 3й элемент, дочеренму элементу меняем артрибут пути на соответствующий картинке массива
+	secondimg.lastElementChild.setAttribute('src', firstPictLeft(arrnumb)); // 2й элемент, дочеренму элементу меняем артрибут пути на соответствующий картинке массива
+	firstimg.lastElementChild.setAttribute('src', firstPictLeft(arrnumb)); // 1й элемент, дочеренму элементу меняем артрибут пути на соответствующий картинке массива
 });
 
 
-
-forvardbtn.addEventListener('click', function () {
-	firstimg.lastElementChild.setAttribute('src', firstPictRight(arrnumb));
-	secondimg.lastElementChild.setAttribute('src', secondtPictRight(arrnumb));
-	thirdimg.lastElementChild.setAttribute('src', thirdPictRight(arrnumb));
+forvardbtn.addEventListener('click', function () {                 // вешаем событие на кнопку "вперёд"
+	firstimg.lastElementChild.setAttribute('src', firstPictRight(arrnumb)); // 1й элемент, дочеренму элементу меняем артрибут пути на соответствующий картинке массива
+	secondimg.lastElementChild.setAttribute('src', secondtPictRight(arrnumb)); // 2й элемент, дочеренму элементу меняем артрибут пути на соответствующий картинке массива
+	thirdimg.lastElementChild.setAttribute('src', thirdPictRight(arrnumb)); // 3й элемент, дочеренму элементу меняем артрибут пути на соответствующий картинке массива
 });
