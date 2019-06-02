@@ -30,20 +30,33 @@ function setDate () {                                                   // ф-и
 
 
 function readCookie (arr) {                                        // ф-ия для чтения кук и установления рейтинга
-	let cookie = document.cookie;                                    // читаем куки
+	let datacook = document.cookie;                                  // читаем куки и записываем в переменную
+	let value = '';                                                  // объявляем пустую переменную для последующей записи в неё
 
-	if (cookie != 0) {                                               // если куки есть
-		cookie = cookie.split('=');                                    // сплитим их для определения значения
-		let cookvalue = cookie[1];                                     // берём само значение
+	if(datacook != 0) {                                              // если куки есть
+		datacook = datacook.split('; ');                               // сплитим их по "; "
 
-		for (let i = 0; i < arr.length; i++) {                         // перебираем все значения массива звёздочек
-			for (let j = 0; j < cookvalue; j++) {                        // определяем значения кук и пробегаемся N-ное раз по звёздам
-				arr[j].classList.remove('fa-star-o');                      // на каждом шаге удаляем класс пустой звезды
-				arr[j].classList.add('fa-star');                           // и присваиваем класс закрашенной звезды
+		for (let i = 0; i < datacook.length; i++) {                    // проходим по всем значениям
+			value = datacook[i].split('=');                              // и сплитим их по "=", получаем массив со строками
+			console.log(value);
+			for (let j = 0; j < value.length; j++) {
+				if (value[j] == 'stars') {
+					console.log(value[j + 1]);
+				}
+			}
+		}
+
+		value = +value[1];
+
+		for (let x = 0; x < stars.length; x++) {
+			for (let z = 0; z < value; z++) {
+				stars[z].classList.remove('fa-star-o');
+				stars[z].classList.add('fa-star');
 			}
 		}
 
 	}
+
 }
 
 
