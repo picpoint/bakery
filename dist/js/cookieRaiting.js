@@ -29,33 +29,28 @@ function setDate () {                                                   // ф-и
 
 
 
-function readCookie (arr) {                                        // ф-ия для чтения кук и установления рейтинга
-	let datacook = document.cookie;                                  // читаем куки и записываем в переменную
-	let value = '';                                                  // объявляем пустую переменную для последующей записи в неё
+function readCookie (arr) {                                            // ф-ия для чтения кук и установления рейтинга
+	let datacookie = document.cookie;                                    // читаем куки и записываем в переменную
+	let valuecookie = '';                                                // переменная для временной записи результатов кук
+	let valuestars = 0;                                                  // переменная для временной записи результатов звёзд
+	datacookie = datacookie.split('; ');                                 // сплитим строку чтоб отделить одни куки от других
 
-	if(datacook != 0) {                                              // если куки есть
-		datacook = datacook.split('; ');                               // сплитим их по "; "
-
-		for (let i = 0; i < datacook.length; i++) {                    // проходим по всем значениям
-			value = datacook[i].split('=');                              // и сплитим их по "=", получаем массив со строками
-			console.log(value);
-			for (let j = 0; j < value.length; j++) {
-				if (value[j] == 'stars') {
-					console.log(value[j + 1]);
-				}
+	for (let i = 0; i < datacookie.length; i++) {                        //
+		valuecookie = datacookie[i];
+		valuecookie = valuecookie.split('=');
+		for (let j = 0; j < valuecookie.length; j++) {
+			if (valuecookie[j] == 'stars') {
+				valuestars = valuecookie[j + 1];
 			}
 		}
-
-		value = +value[1];
-
-		for (let x = 0; x < stars.length; x++) {
-			for (let z = 0; z < value; z++) {
-				stars[z].classList.remove('fa-star-o');
-				stars[z].classList.add('fa-star');
-			}
-		}
-
 	}
+
+  for (let x = 0; x < stars.length; x++) {
+    for (let z = 0; z < valuestars; z++) {
+    	stars[z].classList.remove('fa-star-o');
+    	stars[z].classList.add('fa-star');
+		}
+  }
 
 }
 
