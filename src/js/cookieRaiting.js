@@ -35,20 +35,20 @@ function readCookie (arr) {                                            // ф-и�
 	let valuestars = 0;                                                  // переменная для временной записи результатов звёзд
 	datacookie = datacookie.split('; ');                                 // сплитим строку чтоб отделить одни куки от других
 
-	for (let i = 0; i < datacookie.length; i++) {                        //
+	for (let i = 0; i < datacookie.length; i++) {                        // прбегаемся по всему массиву и читаем каждую переменную типа "key=value"
 		valuecookie = datacookie[i];
-		valuecookie = valuecookie.split('=');
-		for (let j = 0; j < valuecookie.length; j++) {
-			if (valuecookie[j] == 'stars') {
-				valuestars = valuecookie[j + 1];
+		valuecookie = valuecookie.split('=');                              // сплитим чтобы отделить key от value
+		for (let j = 0; j < valuecookie.length; j++) {                     // перебираем получившееся
+			if (valuecookie[j] == 'stars') {                                 // если в куках есть кука с ключём stars
+				valuestars = valuecookie[j + 1];                               // берём значение этой куки
 			}
 		}
 	}
 
-  for (let x = 0; x < stars.length; x++) {
-    for (let z = 0; z < valuestars; z++) {
-    	stars[z].classList.remove('fa-star-o');
-    	stars[z].classList.add('fa-star');
+  for (let x = 0; x < stars.length; x++) {                             // пробегаемся по всем звёздам
+    for (let z = 0; z < valuestars; z++) {                             // пробегаемся value-раз по звёздам
+    	stars[z].classList.remove('fa-star-o');                          // и удаляем класс не закрашенной звезды
+    	stars[z].classList.add('fa-star');                               // ставим класс закрашенной звезды
 		}
   }
 
