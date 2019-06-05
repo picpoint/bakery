@@ -25,4 +25,3 @@ function recipeClose () {
 
 btn.addEventListener('click', recipeShow);
 sandwichclosebtn.addEventListener('click', recipeClose);
-//sandwichfullmenu.addEventListener('click', recipeClose);

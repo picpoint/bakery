@@ -1399,14 +1399,15 @@
 
 .sandwich {
 	background-color: @colorsandwich;
+	transition: @transition;
 	&__wrap {
 
 	}
 	&__fullmenu {
 		position: absolute;
+		transition: @transition;
 	}
 	&__menublock {
-		//border: @border;
 		display: flex;
 		width: 55%;
 		height: 50%;
@@ -1425,9 +1426,15 @@
 		.lg-block({
 			width: 65%;
 			height: 35%;
+			transition: @transition;
 		});
-		.md-block({
-			//flex-direction: column;
+		.sm-block({
+			width: 80%;
+			transition: @transition;
+		});
+		.xs-block({
+			width: 90%;
+			transition: @transition;
 		});
 	}
 	&__pictburger {
@@ -1435,9 +1442,14 @@
 		width: 55%;
 		height: 100%;
 		border-radius: 30px 0 0 30px;
+		transition: @transition;
+		.md-block({
+			height: 1px;
+		});
 		img {
 			height: 100%;
 			border-radius: 30px 0 0 30px;
+			transition: @transition;
 		}
 	}
 	&__recipeburger {
@@ -1451,8 +1463,12 @@
 		color: #fff;
 		text-align: center;
 		transition: @transition;
+		.md-block({
+			width: 70%;
+			transition: @transition;
+		});
 		h4 {
-			color: @colordarkgold;
+			color: @colorlightgold;
 			font-size: 3.2rem;
 			font-weight: bolder;
 			transition: @transition;
@@ -1462,9 +1478,16 @@
 			});
 			.xl-block({
 				font-size: 2.5rem;
+				transition: @transition;
 			});
 			.lg-block({
 				font-size: 2rem;
+				transition: @transition;
+			});
+			.md-block({
+				font-size: 2.7rem;
+				text-shadow: 2px 2px 7px #000;
+				transition: @transition;
 			});
 		}
 		span {
@@ -1482,6 +1505,19 @@
 				font-size: 1rem;
 				transition: @transition;
 			});
+			.md-block({
+				text-shadow: 2px 2px 7px #000;
+				font-size: 1.1rem;
+				transition: @transition;
+			});
+			.sm-block({
+				font-size: 1.4rem;
+				transition: @transition;
+			});
+			.xs-block({
+				font-size: 1.2rem;
+				transition: @transition;
+			});
 		}
 	}
 	&__closebtn {
@@ -1491,11 +1527,21 @@
 		left: 30px;
 		height: 35px;
 		width: 30px;
+		transition: @transition;
+		.md-block({
+			left: 80px;
+			transition: @transition;
+		});
+		.xs-block({
+			left: 45px;
+			transition: @transition;
+		});
 		img {
 			font-size: 2rem;
 			border-radius: 100%;
 			border: 2px solid white;
 			cursor: pointer;
+			transition: @transition;
 		}
 	}
 	.popup {
@@ -1514,15 +1560,19 @@
 		});
 		.lg-block({
 			height: 1370px;
+			transition: @transition;
 		});
 		.md-block({
 			height: 2370px;
+			transition: @transition;
 		});
 		.sm-block({
 			height: 2050px;
+			transition: @transition;
 		});
 		.xs-block({
 			height: 1900px;
+			transition: @transition;
 		});
 	}
 	.popup2 {
@@ -1530,6 +1580,15 @@
 		justify-content: center;
 		align-items: center;
 		background-color: rgba(0, 0, 0, 0.8);
+		transition: @transition;
+		.md-block({
+			flex-direction: column;
+			height: 500px;
+			background-image: url("../pict/hamburgerhorizont.png");
+			background-position: bottom;
+			background-size: cover;
+			transition: @transition;
+		});
 	}
 	&__villageblock {
 		display: flex;
@@ -1611,7 +1670,6 @@
 		}
 	}
   &__dishes {
-			//border: @border;
       display: flex;
 			.md-block({
 				flex-direction: column;
