@@ -7,16 +7,16 @@ const thirdimg = document.querySelector('.pancakes__thirdimg');     // дост�
 let count = 0;                                                      // общий счетчик
 
 let arrslide = [                                                    // массив с путями к картинкам для слайдера
-	'../pict/slide/bekkon.png',
-	'../pict/slide/berries.png',
-	'../pict/slide/cheese.png',
-	'../pict/slide/corn.png',
-	'../pict/slide/egg.png',
-	'../pict/slide/eggs.jpg',
-	'../pict/slide/rukkolosalad.png',
-	'../pict/slide/salad.jpg',
-	'../pict/slide/saladchicken.jpg',
-	'../pict/slide/vegetables.png'
+	'pict/slide/bekkon.png',
+	'pict/slide/berries.png',
+	'pict/slide/cheese.png',
+	'pict/slide/corn.png',
+	'pict/slide/egg.png',
+	'pict/slide/eggs.jpg',
+	'pict/slide/rukkolosalad.png',
+	'pict/slide/salad.jpg',
+	'pict/slide/saladchicken.jpg',
+	'pict/slide/vegetables.png'
 ];
 
 
