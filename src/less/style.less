@@ -1119,31 +1119,106 @@
 		});
 	}
 	&__shadowscreen {
-		border: @border;
+		//border: @border;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		position: absolute;
 		width: 100%;
 		height: 130%;
-		background-color: rgba(0, 0, 0, 0.5);
+		//background-color: rgba(0, 0, 0, 0.5);
 		z-index: 5;
 	}
 	&__menuscreen {
-		border: @border;
-		width: 40%;
+		//border: @border;
+		border-radius: 5%;
+		width: 43%;
 		height: 70%;
 		background-image: url("../pict/menu.jpg");
 		background-size: cover;
+		box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.8);
+	}
+	&__closescreen {
+		//border: @border;
+		height: 1px;
+		img {
+			position: relative;
+			left: 100%;
+			top: -15px;
+			height: 35px;
+			cursor: pointer;
+		}
 	}
 	&__logoscreen {
-
+		//border: @border;
+		display: flex;
+		justify-content: center;
+		width: 100%;
+		height: 10%;
+		img {
+			height: 100%;
+		}
 	}
 	&__dishesscreen {
-
+		//border: @border;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: flex-end;
+		width: 100%;
+		height: 80%;
+	}
+	&__dish {
+		//border: @border;
+		border-bottom: 1px solid @colortextdarkgray;
+		border-top: 1px solid @colortextdarkgray;
+		display: flex;
+		align-items: center;
+		align-content: space-around;
+		width: 82%;
+		//margin: 4px 0;
+		color: white;
+	}
+	&__checkdish {
+		width: 5%;
+		input {
+			width: 17px;
+			height: 17px;
+		}
+	}
+	&__describedish {
+		//border: @border;
+		width: 80%;
+		h4 {
+			font-size: 1.3rem;
+			font-weight: bolder;
+			color: @colorlightbrown;
+		}
+		span {
+			font-size: 0.8rem;
+			color: @colorredgold;
+		}
+	}
+	&__pricedish {
+		//border: @border;
+		span {
+			font-size: 2rem;
+			color: @colorlightgold;
+		}
 	}
 	&__costscreen {
-
+		border: @border;
+		display: flex;
+		width: 100%;
+		height: 10%;
+	}
+	&__orderprice {
+		border: @border;
+		width: 80%;
+	}
+	&__totalsumm {
+		border: @border;
+		width: 20%;
 	}
 	&__price {
 		display: flex;
