@@ -16,12 +16,24 @@ closescreen.addEventListener('click', function () {
 
 
 function countPriceMenu() {
-  /*
+
   for (let i = 0; i < allId.length; i++) {
-    allId[i].setAttribute('checked', true);
+    if (i % 2 != 0) {
+      allId[i].setAttribute('checked', true);
+    }
+    if (allId[i].hasAttribute('checked')) {
+      console.log(i);
+    }
   }
-  */
+
 
 }
+
+
+
+
+
+
+
 
 countPriceMenu();
