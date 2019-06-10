@@ -1120,7 +1120,7 @@
 	}
 	&__shadowscreen {
 		//border: @border;
-		display: flex;
+		display: none;
 		align-items: center;
 		justify-content: center;
 		position: absolute;
@@ -1137,6 +1137,29 @@
 		background-image: url("../pict/menu.jpg");
 		background-size: cover;
 		box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.8);
+		transition: @transition;
+		.xxl-block({
+			width: 50%;
+			transition: @transition;
+		});
+		.xl-block({
+			width: 53%;
+			transition: @transition;
+		});
+		.lg-block({
+			width: 60%;
+		});
+		.md-block({
+			width: 70%;
+			height: 55%;
+		});
+		.sm-block({
+			width: 80%;
+			height: 60%;
+		});
+		.xs-block({
+			width: 85%;
+		});
 	}
 	&__closescreen {
 		//border: @border;
@@ -1155,6 +1178,11 @@
 		justify-content: center;
 		width: 100%;
 		height: 10%;
+		transition: @transition;
+		.md-block({
+			height: 8%;
+			transition: @transition;
+		});
 		img {
 			height: 100%;
 		}
@@ -1176,7 +1204,6 @@
 		align-items: center;
 		align-content: space-around;
 		width: 82%;
-		//margin: 4px 0;
 		color: white;
 	}
 	&__checkdish {
@@ -1184,6 +1211,17 @@
 		input {
 			width: 17px;
 			height: 17px;
+			transition: @transition;
+			.xl-block({
+				width: 15px;
+				height: 15px;
+				transition: @transition;
+			});
+			.md-block({
+				width: 13px;
+				height: 13px;
+				transition: @transition;
+			});
 		}
 	}
 	&__describedish {
@@ -1193,32 +1231,104 @@
 			font-size: 1.3rem;
 			font-weight: bolder;
 			color: @colorlightbrown;
+			.xl-block({
+				font-size: 1.2rem;
+			});
 		}
 		span {
 			font-size: 0.8rem;
 			color: @colorredgold;
+			transition: @transition;
+			.md-block({
+				display: none;
+				transition: @transition;
+			});
 		}
 	}
 	&__pricedish {
 		//border: @border;
+		transition: @transition;
 		span {
 			font-size: 2rem;
 			color: @colorlightgold;
+			transition: @transition;
+			.xl-block({
+				font-size: 1.7rem;
+				transition: @transition;
+			});
+			.lg-block({
+				font-size: 1.5rem;
+				transition: @transition;
+			});
+			.sm-block({
+				font-size: 1.3rem;
+				transition: @transition;
+			});
 		}
 	}
 	&__costscreen {
-		border: @border;
+		//border: @border;
 		display: flex;
 		width: 100%;
 		height: 10%;
 	}
 	&__orderprice {
-		border: @border;
+		//border: @border;
+		display: flex;
+		justify-content: center;
+		align-content: center;
+		align-items: center;
 		width: 80%;
+		height: 100%;
+		span {
+			font-size: 3rem;
+			font-weight: bolder;
+			font-style: italic;
+			text-decoration: underline;
+			color: @colorlightbrown;
+			text-shadow: 2px 2px 7px #000;
+			transition: @transition;
+			.xl-block({
+				font-size: 2.5rem;
+				transition: @transition;
+			});
+			.md-block({
+				font-size: 2.3rem;
+				transition: @transition;
+			});
+			.sm-block({
+				font-size: 2.1rem;
+				transition: @transition;
+			});
+		}
 	}
 	&__totalsumm {
-		border: @border;
+		//border: @border;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		width: 20%;
+		height: 100%;
+		span {
+			font-size: 2.7rem;
+			font-weight: bolder;
+			font-style: italic;
+			text-decoration: underline;
+			color: @colorlightgold;
+			transition: @transition;
+			.xl-block({
+				font-size: 2.3rem;
+				transition: @transition;
+			});
+			.md-block({
+				font-size: 2.1rem;
+				transition: @transition;
+			});
+			.sm-block({
+				font-size: 2rem;
+				transition: @transition;
+			});
+		}
 	}
 	&__price {
 		display: flex;
@@ -1352,7 +1462,7 @@
 		});
 	}
 	&__flaircover {
-		border: @border;
+		//border: @border;
 		display: flex;
 		justify-content: space-between;
 		flex-direction: column;
