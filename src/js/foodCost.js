@@ -20,16 +20,15 @@ closescreen.addEventListener('click', function () {
 function countPriceMenu() {
 
   for (let i = 0; i < allId.length; i++) {
-    if (i == 10) {
-      allId[i].setAttribute('checked', true);
-    }
-    if (allId[i].hasAttribute('checked')) {
-      ajaxRequest(i);
-    }
+
+    allId[i].addEventListener('click', function () {
+    	ajaxRequest(i);
+		});
   }
 
-
 }
+
+
 
 function ajaxRequest (item) {
   let objValue = 0;
@@ -46,7 +45,7 @@ function ajaxRequest (item) {
 			  objValue = obj[i];
 			  for (let key in objValue) {
 			  	if (count == item) {
-						console.log(objValue[key]);
+						console.log('cost => ', objValue[key]);
 						totalsumm.firstElementChild.innerHTML = objValue[key];
 					}
 					count++;
