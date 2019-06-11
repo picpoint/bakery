@@ -6,6 +6,7 @@ const allId = document.getElementsByTagName('input');
 const totalsumm = document.querySelector('.breakfast__totalsumm');
 console.log(totalsumm);
 
+let sum = 0;
 
 blockread.addEventListener('click', function () {
   menuscreen.style.display = 'flex';
@@ -18,16 +19,13 @@ closescreen.addEventListener('click', function () {
 
 
 function countPriceMenu() {
-
   for (let i = 0; i < allId.length; i++) {
-
     allId[i].addEventListener('click', function () {
     	ajaxRequest(i);
 		});
   }
 
 }
-
 
 
 function ajaxRequest (item) {
@@ -46,7 +44,9 @@ function ajaxRequest (item) {
 			  for (let key in objValue) {
 			  	if (count == item) {
 						console.log('cost => ', objValue[key]);
-						totalsumm.firstElementChild.innerHTML = objValue[key];
+						console.log(sum);
+						sum += +objValue[key];
+						totalsumm.firstElementChild.innerHTML = sum;
 					}
 					count++;
         }
