@@ -4,9 +4,10 @@ const menuscreen = document.querySelector('.breakfast__shadowscreen');
 const closescreen = document.querySelector('.breakfast__closescreen');
 const allId = document.getElementsByTagName('input');
 const totalsumm = document.querySelector('.breakfast__totalsumm');
-console.log(totalsumm);
+//console.log(totalsumm);
 
 let sum = 0;
+//let arrValues = [];
 
 blockread.addEventListener('click', function () {
   menuscreen.style.display = 'flex';
@@ -19,9 +20,21 @@ closescreen.addEventListener('click', function () {
 
 
 function countPriceMenu() {
-  for (let i = 0; i < allId.length; i++) {
+	let arrValues = [];
+	let counter = 0;
+
+	for (let i = 0; i < allId.length; i++) {
     allId[i].addEventListener('click', function () {
-    	ajaxRequest(i);
+			allId[i].setAttribute('checked', true);
+    	for (let j = 0; j < allId.length; j++) {
+				//allId[i].setAttribute('checked', true);
+				if (allId[j].hasAttribute('checked')) {
+					console.log(j + 'checked');
+					console.log(allId[j]);
+				}
+			}
+
+			console.log('------------');
 		});
   }
 
@@ -36,9 +49,11 @@ function ajaxRequest (item) {
 	xhr.responseType = 'json';
 	xhr.open('GET', url);
 	xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
 	xhr.addEventListener('readystatechange', function () {
 		if (xhr.readyState === 4 && xhr.status === 200) {
 			let obj = xhr.response;
+
 			for (let i = 0; i < obj.length; i++) {
 			  objValue = obj[i];
 			  for (let key in objValue) {
@@ -54,6 +69,7 @@ function ajaxRequest (item) {
 		}
 
 	});
+
 	xhr.send();
 
 }
