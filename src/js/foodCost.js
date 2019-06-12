@@ -25,15 +25,17 @@ function countPriceMenu() {
 
 	for (let i = 0; i < allId.length; i++) {
     allId[i].addEventListener('click', function () {
-			allId[i].setAttribute('checked', true);
-    	for (let j = 0; j < allId.length; j++) {
-				//allId[i].setAttribute('checked', true);
-				if (allId[j].hasAttribute('checked')) {
-					console.log(j + 'checked');
-					console.log(allId[j]);
-				}
-			}
+			allId[i].setAttribute('checked', 'checked');
 
+			for (let j = 0; j < allId.length; j++) {
+				if (allId[j].hasAttribute('checked')) {
+					//console.log(j + 'checked');
+					console.log(allId[j]);
+				} else {
+					allId[j].removeAttribute('checked');
+				}
+				//console.log(allId[j]);
+			}
 			console.log('------------');
 		});
   }
