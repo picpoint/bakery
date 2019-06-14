@@ -18,26 +18,31 @@ closescreen.addEventListener('click', function () {                    // соб
 
 
 function countPriceMenu() {                                            // ф-ия подсчёта сумм блюд
-	let arrValues = [];
 	let counter = 0;
 
 	for (let i = 0; i < allId.length; i++) {                             // пробегаемся по всем input
     allId[i].addEventListener('click', function () {                   // на каждом элементе при клике делаем следующее
+      let arrValues = [];
 			for (let j = 0; j < allId.length; j++) {
 				if (allId[j].checked == true) {
-					console.log(allId[j]);
+					arrValues.push(j + 1);
+          //console.log(arrValues);
 				}
 			}
       console.log('------------');
+      ajaxRequest(arrValues);
 		});
   }
 
 }
 
 
-function ajaxRequest (item) {                                          // ф-ия ajax запрос к серверу
-  let objValue = 0;
+function ajaxRequest (arrValues) {                                          // ф-ия ajax запрос к серверу
+	console.log(arrValues);
+	let objValue = 0;
   let count = 0;
+  let valuesObj = 0;
+  let value = 0;
 	const xhr = new XMLHttpRequest();                                    // создаем объект класса
 	const url = 'https://raw.githubusercontent.com/picpoint/bakery/master/menu.json'; // делаем запрос по соответствующему URL-y
 	xhr.responseType = 'json';                                           // указываем, что ответ от сервера будет в json
@@ -47,25 +52,23 @@ function ajaxRequest (item) {                                          // ф-и�
 	xhr.addEventListener('readystatechange', function () {               // добавляем событие ответа от сервера
 		if (xhr.readyState === 4 && xhr.status === 200) {                  // если состояние == 4 и статус 200
 			let obj = xhr.response;                                          // в переменную записываем результат ответа, а эменно массив объектов
-
-			for (let i = 0; i < obj.length; i++) {                           // пробегаемся по массиву
-			  objValue = obj[i];                                             // на каждом шаге присваиваем объект в переменную
-			  for (let key in objValue) {                                    // пробегаемся по объекту
-			  	if (count == item) {                                         // если счётчик == значениею переданному в ajax запрос
-						console.log('cost => ', objValue[key]);
-						console.log(sum);
-						sum += +objValue[key];                                     // в переменную sum присваиваем значение объекта, а именно стоимость блюда(2е значение объекта)
-						totalsumm.firstElementChild.innerHTML = sum;               // в span элемент пишем резульат всех блюд
+			for (let i = 0; i < obj.length; i++) {
+				console.log(obj[i]);
+				for (let j = 0; j < arrValues.length; j++) {
+					if (arrValues[j] == i + 1) {
+						for (let key in obj[i]) {
+							value = obj[i];
+							console.log(value[key]);
+						}
 					}
-					count++;                                                     // наращиваем счётчик для пробегапо элементам
-        }
-      }
+				}
+			}
+
 		}
 
 	});
 
 	xhr.send();                                                          // делаем запрос к серверу
-
 }
 
 
