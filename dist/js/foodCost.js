@@ -26,7 +26,6 @@ function countPriceMenu() {                                            // ф-и�
 			for (let j = 0; j < allId.length; j++) {
 				if (allId[j].checked == true) {
 					arrValues.push(j + 1);
-          //console.log(arrValues);
 				}
 			}
       console.log('------------');
@@ -38,11 +37,9 @@ function countPriceMenu() {                                            // ф-и�
 
 
 function ajaxRequest (arrValues) {                                          // ф-ия ajax запрос к серверу
-	console.log(arrValues);
-	let objValue = 0;
   let count = 0;
-  let valuesObj = 0;
   let value = 0;
+  let summ = 0;
 	const xhr = new XMLHttpRequest();                                    // создаем объект класса
 	const url = 'https://raw.githubusercontent.com/picpoint/bakery/master/menu.json'; // делаем запрос по соответствующему URL-y
 	xhr.responseType = 'json';                                           // указываем, что ответ от сервера будет в json
@@ -52,13 +49,15 @@ function ajaxRequest (arrValues) {                                          // �
 	xhr.addEventListener('readystatechange', function () {               // добавляем событие ответа от сервера
 		if (xhr.readyState === 4 && xhr.status === 200) {                  // если состояние == 4 и статус 200
 			let obj = xhr.response;                                          // в переменную записываем результат ответа, а эменно массив объектов
-			for (let i = 0; i < obj.length; i++) {
-				console.log(obj[i]);
-				for (let j = 0; j < arrValues.length; j++) {
-					if (arrValues[j] == i + 1) {
-						for (let key in obj[i]) {
-							value = obj[i];
+			for (let i = 0; i < obj.length; i++) {                           // пробегаемся по данному массиву объектов
+				for (let j = 0; j < arrValues.length; j++) {                   // пробегаемся по каждому номеру объекта от 1 до 11
+					if (arrValues[j] == i + 1) {                                 // если номер объекта == номеру нажатого элемента
+						for (let key in obj[i]) {                                  // берём данный элемент(объект) пробегаемся по нему
+							value = obj[i];                                          // в переменную присваиваем значение объекта
 							console.log(value[key]);
+							summ += +value[key];
+							console.log(summ);
+							totalsumm.firstElementChild.innerText = summ;
 						}
 					}
 				}
