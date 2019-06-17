@@ -28,7 +28,6 @@ function countPriceMenu() {                                            // ф-и�
 					arrValues.push(j + 1);
 				}
 			}
-      console.log('------------');
       ajaxRequest(arrValues);
 		});
   }
@@ -50,13 +49,15 @@ function ajaxRequest (arrValues) {                                          // �
 		if (xhr.readyState === 4 && xhr.status === 200) {                  // если состояние == 4 и статус 200
 			let obj = xhr.response;                                          // в переменную записываем результат ответа, а эменно массив объектов
 			for (let i = 0; i < obj.length; i++) {                           // пробегаемся по данному массиву объектов
+				if (arrValues.length == 0) {
+          totalsumm.firstElementChild.innerText = 0;
+          return;
+				}
 				for (let j = 0; j < arrValues.length; j++) {                   // пробегаемся по каждому номеру объекта от 1 до 11
 					if (arrValues[j] == i + 1) {                                 // если номер объекта == номеру нажатого элемента
 						for (let key in obj[i]) {                                  // берём данный элемент(объект) пробегаемся по нему
 							value = obj[i];                                          // в переменную присваиваем значение объекта
-							console.log(value[key]);
 							summ += +value[key];
-							console.log(summ);
 							totalsumm.firstElementChild.innerText = summ;
 						}
 					}
