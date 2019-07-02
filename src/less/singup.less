@@ -1,6 +1,22 @@
-.singup {
+@import "var.less";
+
+
+.regform {
   &__wrap {
-    height: 300px;
+    //border: @border;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 95vh;
+  }
+  &__registration {
     border: @border;
+    height: 80%;
+    width: 40%;
+  }
+  form {
+    border: @border;
+    display: flex;
+    flex-direction: column;
   }
 }
