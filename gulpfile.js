@@ -58,16 +58,13 @@ const smartGrigConf = {
 
 gulp.task('preproc', function () {
 	return gulp.src(settings.srcless)
-		.pipe(less())
-		.pipe(gulp.dest(settings.srccss))
- 
- //gulp.src('./dist/css/*.css')
-  .pipe(cleanCSS())
-  .pipe(gulp.dest('./dist/css'))
-  
-		.pipe(browserSync.reload({
-				stream: true
-		}));
+	 .pipe(less())
+	 .pipe(gulp.dest(settings.srccss))
+   .pipe(cleanCSS())
+   .pipe(gulp.dest('./dist/css'))
+   .pipe(browserSync.reload({
+	 		stream: true
+	 }));
 });
 
 
