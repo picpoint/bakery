@@ -2,6 +2,7 @@ const express = require('express');                      // пордключае
 const app = express();
 const mysql = require('mysql');                          // подключаем mysql
 
+
 app.use(express.static('dist'));                         // указываем в какой папке лежит статика
 
 let conn = mysql.createConnection({                      // объект с данными для подключения
@@ -34,7 +35,7 @@ conn.connect(function (err) {                            // ф-ия коннек
 
 
 
-app.listen(3000, function () {                           // вешаем прослушку на 3000 порт
+app.listen(4000, function () {                           // вешаем прослушку на 3000 порт
 	console.log('server is starting');
 });
 
