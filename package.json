@@ -1,11 +1,10 @@
 {
-  "name": "gems",
+  "name": "",
   "version": "1.0.0",
   "description": "",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
@@ -20,7 +19,5 @@
     "smart-grid": "^2.1.2"
   },
   "dependencies": {
-    "express": "^4.17.1",
-    "mysql": "^2.17.1"
   }
 }
