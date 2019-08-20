@@ -1,0 +1,57 @@
+@import "var.less";
+
+
+.regform {
+  background-image: url("../pict/graybkg.jpg");
+  background-size: cover;
+  &__wrap {
+    //border: @border;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 98vh;
+  }
+  &__registration {
+    //border: @border;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #ececec;
+    border-radius: 10px;
+    height: 60%;
+    width: 30%;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  }
+  form {
+    //border: @border;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 0 50px 0;
+    input {
+      height: 45px;
+      width: 75%;
+      margin: 15px 0;
+      border-radius: 5px;
+      border: 1px solid slategray;
+      font-size: 1.1rem;
+      padding-left: 7px;
+    }
+  }
+  &__btnsend {
+    //border: @border;
+    display: flex;
+    flex-direction: row-reverse;
+    align-self: center;
+    width: 75%;
+    button {
+      height: 50px;
+      width: 140px;
+      border-radius: 5px;
+      border: 1px dotted gray;
+      cursor: pointer;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.25);
+      outline: 0;
+    }
+  }
+}
